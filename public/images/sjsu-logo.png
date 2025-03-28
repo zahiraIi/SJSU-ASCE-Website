@@ -1,0 +1,461 @@
+<!DOCTYPE HTML>
+<html lang="en">
+   <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <title>Page not found</title>
+      
+      <meta name="description" content="">
+      <meta name="keywords" content="">
+      <meta name="author" content="">
+      
+      
+      <!-- Google Tag Manager (noscript) -->
+<noscript>
+	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PMNG6XV" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->	
+<!-- Google Tag Manager -->
+
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+													  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+							})(window,document,'script','dataLayer','GTM-PMNG6XV');</script>
+
+<!-- End Google Tag Manager -->
+<!-- JQUERY -->
+<script src="/sjsuhome/assets/js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<!-- Login Link -->
+<script type="text/javascript" src="/sjsuhome/includes/directedit-min.js"></script>
+<script type="text/javascript">
+  document.ready = function(){ directedit(); }
+</script>
+	
+
+      
+      
+      <!-- LIGHTBOX -->
+<link rel="stylesheet" type="text/css" href="/sjsuhome/assets/css/jquery.lightbox-0.5.css" media="screen" />
+
+<!-- NIVO SLIDER -->
+<link rel="stylesheet" type="text/css" href="/sjsuhome/assets/css/nivo-slider-em.css" media="screen" />
+
+<!-- ALL STYLES -->
+<link rel="stylesheet" type="text/css" href="/sjsuhome/assets/css/styles-em.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/sjsuhome/assets/css/fontfix.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/sjsuhome/assets/css/content-enhancements.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="/sjsuhome/assets/css/print.css" media="print" />
+
+<!-- IE COMPATIBILITY -->
+<!--[if lt IE 9]>
+<link rel="stylesheet" href="/sjsuhome/assets/css/styles-ie.css" />
+<script src="/sjsuhome/assets/js/html5-min.js"></script>
+<![endif]-->
+
+<!--[if lte IE 6]>
+<link rel="stylesheet" href="/sjsuhome/assets/css/updateie6.css" type="text/css" />
+<![endif]-->
+
+
+      
+      <!-- Google Analytics for 404 page -->
+<script type="text/javascript">
+      var _gaq = _gaq || [];
+      var ref = "";
+      ref = document.referrer; 
+      if(!document.referrer) { ref ="direct";}
+      var errorpage = document.location.hostname + document.location.pathname;
+      var pluginUrl =  '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+      _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+      _gaq.push(['_setAccount', 'UA-21659030-2']);
+      _gaq.push(['_setCustomVar',1,'Referrer',ref,3]); 
+      _gaq.push(['_setCustomVar',2,'ErrPage',errorpage,3]); 
+      _gaq.push(['_trackPageview']);
+      (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; 
+      s.parentNode.insertBefore(ga, s);})();
+</script>
+
+   </head>
+   <body class="col-1">
+      <!--googleoff: all-->
+      <div id="skip" class="acc"><a href="#content">Skip to Main Content</a></div>
+      <div id="bg">
+         
+         
+<!--
+<div class="o-emergency u-alert--yellow">
+
+	<div class="o-wrap--content o-emergency__panel">
+		<h1 class="o-emergency__title">Phone calls to campus are currently offline</h1>
+		<p class="o-emergency__text">Please call 408-808-2037 to reach campus while we work with AT&amp;T to resolve the issue.</p>
+	</div>
+
+</div>
+
+<style>
+.o-emergency {
+	width: 100vw;
+	color:#0055a2;
+}
+	
+.o-emergency__panel {
+	width: min(100vw - 4rem, var(--container-max, 80ch));
+    margin-inline: auto;
+}
+
+@media screen and (max-width:767px) {
+	.o-emergency__panel {
+		background-size: 33%;
+	}
+}
+
+.o-emergency.u-alert--red {
+	background-color:#a82428;
+	color:#ffffff;
+}
+
+.o-emergency.u-alert--red .o-emergency__panel {
+	background-image:url('/aspis/media/icons/ui/icon-emergency-white.svg');
+
+}
+
+.o-emergency.u-alert--red .o-emergency__link {
+	color:#ffffff;
+}
+
+.o-emergency.u-alert--yellow {
+	background-color:#e5a823;
+	color:black;
+}
+
+.o-emergency.u-alert--yellow .o-emergency__panel {		
+	background-image:url('/aspis/media/icons/ui/icon-emergency-black.svg');	
+}
+
+.o-emergency.u-alert--yellow .o-emergency__link {
+	color:#000000;
+}
+
+.o-emergency.u-alert--gray {
+	background-color:#555555;
+	color:white;
+}
+
+.o-emergency.u-alert--gray .o-emergency__panel {
+
+	background-image:url('/aspis/media/icons/ui/icon-informational-white.svg');
+
+}
+
+.o-emergency.u-alert--gray .o-emergency__link {
+	color:#f7ca18;
+}
+
+.o-emergency__text {
+	color:inherit;
+	font-family:'Nunito Sans',Verdana,sans-serif;
+	margin:0;
+	font-size:1.1rem;
+}
+
+.u-alert--red .o-emergency__text {
+
+}
+
+.o-emergency__title {
+	color:inherit;
+	font-family:'Nunito Sans',Verdana,sans-serif;
+	font-size:1.3rem;
+	font-weight:650;
+	margin-bottom:0;
+}
+	
+	
+</style>
+
+-->
+
+<!-- emergency notification
+
+<div id="alert">
+<h6 class="alertsubmain">Questions about FAFSA and CADAA?</h6>
+	<p class="alertsub">Visit our <a href="https://www.sjsu.edu/faso/applying/fafsasimp.php">Financial Aid and Scholarship Office</a> for updated information, workshops and FAQs.</p>
+</div>
+ -->
+
+
+
+
+
+<!-- invisible comment test
+
+<div id="alert">
+<h6 class="alertsubmain">WARNING</h6>
+<h6 class="alertsub">Earthquake Advisory</h6>
+<p class="alertsub">Campus closed until further notice</p>
+</div>
+-->
+
+
+
+
+              
+
+         
+         <div id="container" class=""><a href="http://www.sjsu.edu" id="sjsuhomelink">SJSU Homepage</a><div role="banner" id="top_home">
+               <div class="left"><a href="http://www.sjsu.edu" class="btn_logo" title="San José State University">
+                     <h1>San José State University</h1></a><span class="brand-tagline">Powering Silicon Valley</span></div>
+               <div class="right"><span style="height:38px; display:block">&nbsp;</span></div>
+            </div>
+            <h2 class="acc">Site Navigation</h2>
+            <nav class="nav-main" role="navigation">
+               
+               <ul id="homenav">
+<li class="discover-sjsu selected"><a href="https://www.sjsu.edu/about/" onclick="trackLinks('homenav','click','Discover SJSU');">
+<h2 class="navname">Discover SJSU</h2>
+<span class="navarrow">&nbsp;</span></a>
+<div class="sub">
+<ul>
+<li><a class="linkt" href="https://www.sjsu.edu/about/" onclick="trackLinks('homenav','click','Discover:About SJSU');">About SJSU</a></li>
+<li><a href="https://www.sjsu.edu/academics/" onclick="trackLinks('homenav','click','Discover:Academics');">Academics</a></li>
+<li><a href="https://www.sjsu.edu/campus-life/" onclick="trackLinks('homenav','click','Discover:Administration and Leadership');">Administration and Leadership</a></li>
+<li><a class="linkb" href="http://www.sjsuspartans.com/" onclick="trackLinks('homenav','click','Discover:Athletics');">Athletics</a></li>
+<li><a href="https://www.sjsu.edu/campus-life/" onclick="trackLinks('homenav','click','Discover:Calendars and Events');">Calendars and Events</a></li>
+<li><a href="https://www.sjsu.edu/about/partnerships.php" onclick="trackLinks('homenav','click','Discover:Initiatives and Partnerships');">Initiatives and Partnerships</a></li>
+<li><a href="https://library.sjsu.edu/" onclick="trackLinks('homenav','click','Discover:King Library');">King&nbsp;Library</a></li>
+<li><a href="https://blogs.sjsu.edu/newsroom/" onclick="trackLinks('homenav','click','Discover:News');">News</a></li>
+<li><a href="https://www.sjsu.edu/academics/research/" onclick="trackLinks('homenav','click','Discover:Research');">Research</a></li>
+<li><a href="https://www.sjsu.edu/visit/" onclick="trackLinks('homenav','click','Discover:Visit SJSU');">Visit SJSU</a></li>
+</ul>
+</div>
+</li>
+<li class="future-students"><a href="https://www.sjsu.edu/academics/" onclick="trackLinks('homenav','click','FutureStudents');">
+<h2 class="navname">Future Students</h2>
+<span class="navarrow">&nbsp;</span></a>
+<div class="sub">
+<ul>
+<li><a href="https://one.sjsu.edu/" onclick="trackLinks('homenav','click','FutureStudents:Spartan App Portal');">Spartan App Portal</a></li>
+<li><a class="linkt" href="https://www.sjsu.edu/academics/" onclick="trackLinks('homenav','click','FutureStudents:Academics');">Academics</a></li>
+<li><a class="linkb" href="https://www.sjsu.edu/admissions/" onclick="trackLinks('homenav','click','FutureStudents:Admissions');">Admissions</a></li>
+<li><a href="https://www.sjsu.edu/campus-life/events.php" onclick="trackLinks('homenav','click','FutureStudents:Calendars and Events');">Calendars and Events</a></li>
+<li><a href="https://www.sjsu.edu/tuition-and-fees/index.php" onclick="trackLinks('homenav','click','FutureStudents:Finances');">Finances</a></li>
+<li><a href="https://www.sjsu.edu/housing/" onclick="trackLinks('homenav','click','FutureStudents:Housing Options');">Housing Options</a></li>
+<li><a href="https://www.sjsu.edu/campus-life/index.php" onclick="trackLinks('homenav','click','FutureStudents:New Students');">New Students</a></li>
+<li><a href="https://www.sjsu.edu/about/" onclick="trackLinks('homenav','click','FutureStudents:Visit SJSU');">Visit SJSU</a></li>
+</ul>
+</div>
+</li>
+<li class="current-students"><a href="https://www.sjsu.edu/students/" onclick="trackLinks('homenav','click','CurrentStudents');">
+<h2 class="navname">Current Students</h2>
+<span class="navarrow">&nbsp;</span></a>
+<div class="sub">
+<ul class="focus">
+<li><a href="https://one.sjsu.edu/" onclick="trackLinks('homenav','click','CurrentStudents:Spartan App Portal');">Spartan App Portal</a></li>
+<li><a href="https://www.sjsu.edu/academics/" onclick="trackLinks('homenav','click','CurrentStudents:Academics');">Academics</a></li>
+<li><a href="https://www.sjsu.edu/advising/" onclick="trackLinks('homenav','click','CurrentStudents:Advising');">Advising</a></li>
+<li><a href="https://www.sjsu.edu/campus-life/events.php" onclick="trackLinks('homenav','click','CurrentStudents:Calendars and Events');">Calendars and Events</a></li>
+<li><a href="https://www.sjsu.edu/campus-life/" onclick="trackLinks('homenav','click','CurrentStudents:Campus Life');">Campus Life</a></li>
+<li><a href="https://www.sjsu.edu/diversity/" onclick="trackLinks('homenav','click','CurrentStudents:Diversity');">Diversity</a></li>
+<li><a href="https://www.sjsu.edu/tuition-and-fees/" onclick="trackLinks('homenav','click','CurrentStudents:Finances');">Finances</a></li>
+<li><a href="https://www.sjsu.edu/commencement/graduates/" onclick="trackLinks('homenav','click','CurrentStudents:Graduation');">Graduation</a></li>
+<li><a href="https://www.sjsu.edu/campus-life/health-and-wellness.php" onclick="trackLinks('homenav','click','CurrentStudents:Health and Wellness');">Health and Wellness</a></li>
+<li><a href="https://library.sjsu.edu" onclick="trackLinks('homenav','click','CurrentStudents:King Library');">King Library</a></li>
+<li><a href="https://www.sjsu.edu/campus-life/index.php" onclick="trackLinks('homenav','click','CurrentStudents:New Students');">New Students</a></li>
+<li><a href="https://www.sjsu.edu/campus-life/safety.php" onclick="trackLinks('homenav','click','CurrentStudents:Safety');">Safety</a></li>
+<li><a href="https://www.sjsu.edu/sjsucares/get-assistance/housing.php" onclick="trackLinks('homenav','click','CurrentStudents:SJSUCares');">SJSU Cares: Housing&nbsp;Assistance</a></li>
+<li><a href="https://www.sjsu.edu/campus-life/index.php" onclick="trackLinks('homenav','click','CurrentStudents:Technology');">Technology</a></li>
+</ul>
+</div>
+</li>
+<li class="faculty-staff"><a href="https://www.sjsu.edu/up/" onclick="trackLinks('homenav','click','FacultyStaff');">
+<h2 class="navname">Faculty and Staff</h2>
+<span class="navarrow">&nbsp;</span></a>
+<div class="sub">
+<ul>
+<li><a href="https://one.sjsu.edu" onclick="trackLinks('homenav','click','FacultyStaff:Spartan App Portal');">Spartan App Portal</a></li>
+<li><a href="https://www.sjsu.edu/academics/" onclick="trackLinks('homenav','click','FacultyStaff:Academics');">Academics</a></li>
+<li><a href="https://www.sjsu.edu/campus-life/events.php" onclick="trackLinks('homenav','click','FacultyStaff:Calendars and Events');">Calendars and Events</a></li>
+<li><a href="https://www.sjsu.edu/careers/" onclick="trackLinks('homenav','click','FacultyStaff:Careers and Employment');">Careers</a></li>
+<li><a href="https://directory.sjsu.edu" onclick="trackLinks('homenav','click','FacultyStaff:Directory');">Directory</a></li>
+<li><a href="https://www.sjsu.edu/diversity/" onclick="trackLinks('homenav','click','FacultyStaff:Diversity');">Diversity</a></li>
+<li><a href="https://www.sjsu.edu/campus-life/health-and-wellness.php" onclick="trackLinks('homenav','click','FacultyStaff:Health and Wellness');">Health and Wellness</a></li>
+<li><a href="https://library.sjsu.edu" onclick="trackLinks('homenav','click','FacultyStaff:King Library');">King Library</a></li>
+<li><a href="https://www.sjsu.edu/academics/research/index.php" onclick="trackLinks('homenav','click','FacultyStaff:Research');">Research</a></li>
+<li><a href="https://www.sjsu.edu/campus-life/safety.php" onclick="trackLinks('homenav','click','FacultyStaff:Safety');">Safety</a></li>
+<li><a href="https://www.sjsu.edu/workanywhere/tech-tools/about-tools.php" onclick="trackLinks('homenav','click','FacultyStaff:Technology');">Technology</a></li>
+</ul>
+</div>
+</li>
+<li class="alumni-community"><a href="https://www.sjsu.edu/campus-life/sac.php" onclick="trackLinks('homenav','click','Alumni and Community');">
+<h2 class="navname">Alumni and Community</h2>
+<span class="navarrow">&nbsp;</span></a>
+<div class="sub">
+<ul>
+<li><a href="https://www.sjsu.edu/alumni/" onclick="trackLinks('homenav','click','AlumniCommunity:Alumni Association');">Alumni Association</a></li>
+<li><a href="https://www.sjsu.edu/careers/" onclick="trackLinks('homenav','click','AlumniCommunity:Careers and Employment');">Careers</a></li>
+<li><a href="https://www.sjsu.edu/about/doing-business-with-sjsu.php" onclick="trackLinks('homenav','click','AlumniCommunity:Doing Business');">Do Business with SJSU</a></li>
+<li><a href="https://www.sjsu.edu/giving/" onclick="trackLinks('homenav','click','AlumniCommunity:Give to SJSU');">Give to SJSU</a></li>
+<li><a class="linkb" href="https://careercenter.sjsu.edu/" onclick="trackLinks('homenav','click','AlumniCommunity:Hire SJSU Talent');">Hire SJSU Talent</a></li>
+<li><a href="https://www.sjsu.edu/alumni/events/" onclick="trackLinks('homenav','click','AlumniCommunity:Connect');">Connect</a></li>
+<li><a href="https://www.sjsu.edu/about/" onclick="trackLinks('homenav','click','AlumniCommunity:Visit SJSU');">Visit SJSU</a></li>
+</ul>
+</div>
+</li>
+</ul>
+               
+            </nav>
+            <div id="breadcrumb" role="navigation"><a href="http://www.sjsu.edu/">SJSU Home</a><span class="bc-spacer">&gt;</span><a href="/sjsuhome"></a><span class="bc-spacer">&gt;</span><a href="/sjsuhome/errors/">Errors</a><span class="bc-spacer">&gt;</span><a href="/sjsuhome/errors/404error/">Page not found</a></div>
+            <div id="content" role="main">
+               <!--googleon: all-->
+               <h1 class="pagetitle" id="scrolltotop">Page not found</h1>
+               <!--googleoff: all-->
+               <div class="sidebar">
+                  
+                  <style type="text/css">
+.qi.smSAP {
+	background-image:url('/aspis/media/icons/ui/icon-onesjsu-light-blue.svg');
+	background-position:0;
+}
+</style>
+<div id="quickicons">
+<ul>
+<li class="qi smSAP"><a onclick="trackLinks('quicklinks','click','one.SJSU');" href="https://one.sjsu.edu">one.SJSU</a></li>
+<!--<li class="qi smMy"><a href="http://my.sjsu.edu/">MySJSU</a></li>-->
+<li class="qi smCa"><a onclick="trackLinks('quicklinks','click','Canvas');" href="https://sjsu.instructure.com/">Canvas</a></li>
+<li class="qi smAth"><a onclick="trackLinks('quicklinks','click','Athletics');" href="http://www.sjsuspartans.com/">Athletics</a></li>	
+<li class="qi smGv"><a onclick="trackLinks('quicklinks','click','Giving');" href="http://giving.sjsu.edu/">Give to SJSU</a></li>
+</ul>
+</div>
+
+                  
+                  <div id="socialicons">
+                     <ul>
+                        <li class="qi smFa"><a href="http://www.facebook.com/sanjosestate">Facebook</a></li>
+                        <li class="qi smTw"><a href="https://twitter.com/sjsu">Twitter</a></li>
+                        <li class="qi smLi"><a href="http://www.linkedin.com/company/san-jose-state-university">LinkedIn</a></li>
+                        <li class="qi smPi"><a href="http://pinterest.com/sjsu/">Pinterest</a></li>
+                        <li class="qi smYt"><a href="http://www.youtube.com/user/sjsu">YouTube</a></li>
+                        <li class="qi smIn"><a href="http://www.instagram.com/sjsu">Instagram</a></li>
+                     </ul>
+                  </div>
+                  <!-- 404 page - no side navigation -->
+               </div>
+               <div class="content_wrapper">
+                  <div class="left">
+                     <!--googleon: all-->
+                     
+                     
+                     <p>The page you requested cannot be found. You may have used an outdated link or may
+                        have typed the address (URL) incorrectly. If you entered the URL manually, please
+                        check your spelling and try again.
+                     </p>
+                     <h2>Try a search</h2>
+                     <p>The thing you were looking for may have just been moved. Try searching for it by name.</p><style type="text/css">
+.show-for-sr {
+	position: absolute !important;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%);
+  border: 0; 
+}
+</style><form id="search_home" action="http://www.sjsu.edu/search" method="get" name="seek1"><input type="hidden" id="plugin_domain" value="https://csusearch.calstate.edu"><input type="hidden" id="plugin_path" value="csu_search"><label for="q"><span class="show-for-sr">Search SJSU</span></label><input id="q" class="populate" title="Search SJSU" type="text" name="query" placeholder="Search SJSU" size="15" maxlength="100"><input type="hidden" name="col" value="21"><button id="search_submit" class="btnSearch" type="submit" name="submit"><span class="show-for-sr">Search</span></button></form>
+                     <p>&nbsp;</p>
+                     <p>&nbsp;</p>
+                     <p>&nbsp;</p>
+                     <p>&nbsp;</p>
+                     
+                  </div>
+               </div>
+            </div>
+            <div id="footer" role="contentinfo">
+               <!--googleoff: all-->
+               <h2 class="acc">SJSU Links and Resources</h2>
+               
+               <div class="footList">
+<h3>Information for</h3>
+<ul>
+<li><a href="/accessibility/index.php" onclick="trackLinks('footer','click','Alumni');">Accessibility</a></li>
+<li><a href="/aiie/accreditation/index.php" onclick="trackLinks('footer','click','Current Students');">Accreditation</a></li>
+<li><a href="/titleixeo/index.php" onclick="trackLinks('footer','click','Donors');">Title IX</a></li>
+<li><a href="/diversity/index.php" onclick="trackLinks('footer','click','Faculty Staff');">Diversity</a></li>
+<li><a href="/diversity/land-acknowledgement/index.php" onclick="trackLinks('footer','click','Future Students');">Land Acknowledgement</a></li>
+<li><a href="/privacy/index.php" onclick="trackLinks('footer','click','Researchers');">Privacy</a></li>
+</ul>
+</div>
+<div class="footList">
+<h3>Colleges</h3>
+<ul>
+<li><a href="/cob/index.php" onclick="trackLinks('footer','click','LCOB');">Business</a></li>
+<li><a href="/education/index.php" onclick="trackLinks('footer','click','COE');">Education</a></li>
+<li><a href="/engineering/index.php" onclick="trackLinks('footer','click','ENG');">Engineering</a></li>
+<li><a href="/cgs/index.php" onclick="trackLinks('footer','click','CGS');">Graduate Studies</a></li>
+<li><a href="/chhs/index.php" onclick="trackLinks('footer','click','CHHS');">Health and Human Sciences</a></li>
+<li><a href="/humanitiesandarts/index.php" onclick="trackLinks('footer','click','CHA');">Humanities and the Arts</a></li>
+<li><a href="/information-data-society/index.php" onclick="trackLinks('footer','click','PE');">Information, Data and Society</a></li>
+<li><a href="/professional/index.php" onclick="trackLinks('footer','click','COS');">Professional Education</a></li>
+<li><a href="/science/index.php" onclick="trackLinks('footer','click','COSS');">Science</a></li>
+<li><a href="/socialsciences/index.php">Social Science</a></li>
+</ul>
+</div>
+<div class="footList">
+<h3>Quick Links</h3>
+<ul>
+<ul>
+<li><a href="/siteindex/" onclick="trackLinks('footer','click','A-Z');">A-Z Index</a></li>
+<li><a href="/clery/docs/SJSU-Annual-Security-Report.pdf" onclick="trackLinks('footer','click','Academics');">Annual Security Report [pdf]</a></li>
+<li><a href="https://sjsu.bncollege.com/" onclick="trackLinks('footer','click','Bookstore');">Bookstore</a></li>
+<li><a href="/classes/calendar/index.php" onclick="trackLinks('footer','click','Calendars');">Calendars</a></li>
+<li><a href="/careers/index.php" onclick="trackLinks('footer','click','Careers Jobs');">Careers and Jobs</a></li>
+<li><a href="ttps://catalog.sjsu.edu/index.php" onclick="trackLinks('footer','click','Catalog');">Catalog</a></li>
+<li><a href="/sjsucares/get-assistance/" onclick="trackLinks('footer','click','Emergency Food &amp; Housing');">Emergency Food &amp; Housing</a></li>
+<li><a href="/students/" onclick="trackLinks('footer','click','Faculty &amp; Staff');">Current Students</a></li>
+<li><a href="/sjsucares/get-assistance/index.php" onclick="trackLinks('footer','click','Freedom of Speech');">Emergency Food &amp; Housing</a></li>
+<li><a href="/up/index.php" onclick="trackLinks('footer','click','King Library');">Faculty &amp; Staff</a></li>
+<li><a href="/president/priorities-and-initiatives/free-speech/index.php" onclick="trackLinks('footer','click','Land Acknowledgement');">Freedom of Speech</a></li>
+<li><a href="https://library.sjsu.edu/" onclick="trackLinks('footer','click','NewsCenter');">King Library</a></li>
+<li><a href="https://blogs.sjsu.edu/newsroom/" onclick="trackLinks('footer','click','Parenting Students');">NewsCenter</a></li>
+<li><a href="/sjsucares/resources/parenting-students.php" onclick="trackLinks('footer','click','Parking Maps');">Parenting Students</a></li>
+<li><a href="/parking/index.php" onclick="trackLinks('footer','click','Privacy Notice');">Parking and Maps</a></li>
+</ul>
+</ul>
+</div>
+<div class="footList">
+<h3>Contact us</h3>
+<ul>
+<li><a href="/contact/index.php" onclick="trackLinks('footer','click','Contact Form');">Contact Form</a></li>
+<li><a href="https://directory.sjsu.edu/" onclick="trackLinks('footer','click','Directory');">Directory</a></li>
+<li><a href="/about/doing-business-with-sjsu.php" onclick="trackLinks('footer','click','Doing Business with SJSU');">Doing Business with SJSU</a></li>
+<li><a href="/emergency/index.php" onclick="trackLinks('footer','click','File a Complaint');">Emergency Info</a></li>
+<li><a href="/up/resources/file-a-complaint.php" onclick="trackLinks('footer','click','Report Title IX');">File a Complaint</a></li>
+<li><a href="/titleixeo/make-a-report/index.php" onclick="trackLinks('footer','click','Directory');">Report a Title IX Complaint</a></li>
+</ul>
+</div>
+<div class="footAddress">
+<p>San Jos&eacute; State University<br /><a href="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=San+Jose+State+University,+San+Jose,+CA&amp;sll=37.0625,-95.677068&amp;sspn=51.04407,85.341797&amp;ie=UTF8&amp;hq=San+Jose+State+University&amp;hnear=San+Jose+State+University,+San+Jose,+Santa+Clara,+California+95112&amp;z=15&amp;iwloc=A" onclick="trackLinks('footer','click','campus map');">One Washington Square,<br />San Jos&eacute;, CA 95192</a></p>
+<p>408-924-1000 <span id="directedit">&nbsp;</span></p>
+</div>
+<!-- sjsuhome -->
+               
+               <div id="hidden">
+                  <a id="de" href="http://a.cms.omniupdate.com/10?skin=sjsu&amp;account=sjsu&amp;site=sjsuhome&amp;action=de&amp;path=/errors/404error/index.pcf">Last Modified: Jul 30, 2018</a>
+               </div>
+               <!--googleon: all-->
+            </div>
+         </div>
+      </div>
+      
+      <!-- HOVERINTENT: MEGANAV -->
+<script type="text/javascript" src="/sjsuhome/assets/js/jquery.hoverIntent-min.js"></script>
+<script type="text/javascript" src="/sjsuhome/assets/js/jquery.meganav-min.js"></script>
+
+      
+   </body>
+</html>

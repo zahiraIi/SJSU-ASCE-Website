@@ -1,0 +1,64 @@
+{
+  "name": "sjsu-asce-website",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint",
+    "optimize-images": "node scripts/optimize-images.js",
+    "copy-images": "node scripts/optimize-images-simple.js",
+    "download-logos": "node scripts/download-logos.js",
+    "create-placeholders": "node scripts/create-placeholders.js",
+    "fetch-companies": "node scripts/fetch-company-logos.js",
+    "fetch-companies-simple": "node scripts/fetch-companies-simple.js",
+    "fetch-companies-enhanced": "node scripts/fetch-companies-enhanced.js",
+    "verify-urls": "node scripts/verify-company-urls.js",
+    "process-photos": "node scripts/process-photos.js",
+    "watch-photos": "node scripts/watch-photos.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@react-google-maps/api": "^2.20.6",
+    "chokidar": "^3.6.0",
+    "framer-motion": "^12.6.2",
+    "heic-convert": "^2.1.0",
+    "next": "^13.4.19",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-icons": "^5.5.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.8.9",
+    "@types/react": "^18.2.33",
+    "@types/react-dom": "^18.2.14",
+    "autoprefixer": "^10.4.21",
+    "axios": "^1.8.4",
+    "google-auth-library": "^9.15.1",
+    "googleapis": "^148.0.0",
+    "mkdirp": "^3.0.1",
+    "postcss": "^8.5.3",
+    "sharp": "^0.33.5",
+    "tailwindcss": "^3.4.17",
+    "typescript": "^5.2.2"
+  },
+  "readme": {
+    "scripts": {
+      "dev": "Starts the development server",
+      "build": "Builds the app for production",
+      "start": "Runs the built app in production mode",
+      "lint": "Runs ESLint to check for code issues",
+      "download-logos": "Downloads logos for sponsors from their websites",
+      "create-placeholders": "Creates placeholder SVGs for sponsors without logos",
+      "fetch-companies": "Fetches company data from Google Sheet and updates sponsors data (requires proper Google API setup)",
+      "fetch-companies-simple": "Updates sponsors with hardcoded company data from the spreadsheet (more reliable option)",
+      "fetch-companies-enhanced": "Focuses on specific companies (like PASE, Mark Thomas, KPFF) to find better logos using multiple search techniques and manual sources",
+      "process-photos": "Processes all photos in one command - converts HEIC to JPG, deletes originals, and optimizes all images in place",
+      "watch-photos": "Watches the photos directory and automatically processes new/changed images"
+    }
+  }
+}

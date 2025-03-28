@@ -1,0 +1,10 @@
+<svg width="300" height="300" viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="300" height="300" fill="#F0F4F8"/>
+  <rect x="60" y="120" width="180" height="150" fill="#E6EFF6"/>
+  <rect x="90" y="180" width="45" height="45" fill="#D1E2F2"/>
+  <rect x="165" y="180" width="45" height="45" fill="#D1E2F2"/>
+  <rect x="90" y="90" width="120" height="30" fill="#D1E2F2"/>
+  <polygon points="60,120 150,60 240,120" fill="#E6EFF6"/>
+  <rect x="75" y="245" width="150" height="20" rx="4" fill="#0066CC" fillOpacity="0.1"/>
+  <text x="150" y="260" font-family="Arial, sans-serif" font-size="12" fill="#0066CC" text-anchor="middle">COMPANY</text>
+</svg> 

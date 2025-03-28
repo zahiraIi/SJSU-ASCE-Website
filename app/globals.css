@@ -1,0 +1,483 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700;800&display=swap');
+
+:root {
+  /* SJSU Official Colors */
+  --primary: #0055A2; /* SJSU blue */
+  --primary-dark: #004080; /* Darker blue for gradients */
+  --secondary: #E5A823; /* SJSU gold */
+  --secondary-light: #F5D78B; /* Lighter gold for hover states */
+  --gray: #939597; /* SJSU gray */
+  --dark-gray: #666666; /* SJSU dark gray */
+  --light-gray: #D2D2D2; /* SJSU light gray */
+  --rollover-blue: #1C88F4; /* SJSU rollover blue */
+  --dark: #101820;
+  --light: #f5f5f5;
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply font-sans text-dark bg-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+  
+  p {
+    @apply leading-relaxed;
+  }
+  
+  a {
+    @apply text-primary transition-colors hover:text-secondary;
+  }
+}
+
+@layer components {
+  .container-custom {
+    @apply container mx-auto px-4 md:px-6;
+  }
+  
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-8;
+  }
+  
+  .nav-link {
+    @apply px-3 py-2 text-base font-medium hover:text-primary transition-colors;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 font-medium transition-all duration-300;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary/90 hover:shadow-md hover:scale-[1.02];
+  }
+  
+  .btn-secondary {
+    @apply bg-secondary text-primary hover:bg-secondary/90 hover:shadow-md hover:scale-[1.02];
+  }
+  
+  .btn-dark {
+    @apply bg-dark text-white hover:bg-dark/90 hover:shadow-md hover:scale-[1.02];
+  }
+  
+  .btn-light {
+    @apply bg-white text-dark hover:bg-gray-100 hover:shadow-md hover:scale-[1.02];
+  }
+  
+  .btn-outline {
+    @apply border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm hover:shadow-md hover:scale-[1.02];
+  }
+  
+  .card {
+    @apply bg-white border border-gray-200 p-6 transition-all hover:shadow-md;
+  }
+  
+  .card-hover {
+    @apply hover:shadow-lg hover:-translate-y-1 transition-all duration-300;
+  }
+  
+  .social-icon {
+    @apply w-10 h-10 flex items-center justify-center text-gray-500 hover:text-primary transition-colors;
+  }
+  
+  /* SJSU Gradient Backgrounds */
+  .bg-sjsu-gradient {
+    @apply bg-gradient-to-r from-primary to-primary-dark;
+  }
+  
+  .bg-sjsu-gradient-alt {
+    @apply bg-gradient-to-r from-primary-dark via-primary to-secondary;
+  }
+  
+  /* Animation Classes */
+  .animate-fadeIn {
+    animation: fadeIn 0.4s ease forwards;
+    will-change: opacity;
+  }
+  
+  .animate-slideUp {
+    animation: slideUp 0.4s ease forwards;
+    will-change: opacity, transform;
+  }
+  
+  .animate-slideDown {
+    animation: slideDown 0.3s ease forwards;
+    will-change: opacity, transform;
+  }
+  
+  .animate-scaleIn {
+    animation: scaleIn 0.4s ease forwards;
+    will-change: opacity, transform;
+  }
+  
+  .animate-pulse-slow {
+    animation: pulseSlow 4s infinite;
+    will-change: opacity, transform;
+  }
+  
+  /* Stagger animations for children */
+  .stagger-children > * {
+    opacity: 0;
+    transform: translateY(20px);
+    will-change: opacity, transform;
+  }
+  
+  .stagger-children > *:nth-child(1) { animation: staggerFadeIn 0.4s 0.1s ease forwards; }
+  .stagger-children > *:nth-child(2) { animation: staggerFadeIn 0.4s 0.15s ease forwards; }
+  .stagger-children > *:nth-child(3) { animation: staggerFadeIn 0.4s 0.2s ease forwards; }
+  .stagger-children > *:nth-child(4) { animation: staggerFadeIn 0.4s 0.25s ease forwards; }
+  .stagger-children > *:nth-child(5) { animation: staggerFadeIn 0.4s 0.3s ease forwards; }
+  .stagger-children > *:nth-child(6) { animation: staggerFadeIn 0.4s 0.35s ease forwards; }
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUp {
+  from { 
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideDown {
+  from { 
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from { 
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to { 
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulseSlow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: scale(1.03);
+  }
+}
+
+@keyframes staggerFadeIn {
+  from { 
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to { 
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Sponsor animations */
+@keyframes scrollLeft {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.33%);
+  }
+}
+
+@keyframes scrollRight {
+  0% {
+    transform: translateX(-33.33%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll {
+  animation: scrollLeft 30s linear infinite;
+}
+
+.animate-scroll-reverse {
+  animation: scrollRight 30s linear infinite;
+}
+
+/* Photo Gallery Transitions */
+.duration-600 {
+  transition-duration: 600ms;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+@keyframes slideInRight {
+  from { transform: translateX(100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+@keyframes slideOutRight {
+  from { transform: translateX(0); }
+  to { transform: translateX(100%); }
+}
+
+@keyframes slideOutLeft {
+  from { transform: translateX(0); }
+  to { transform: translateX(-100%); }
+}
+
+/* Updated gallery animations for consistent left-to-right sliding */
+.photo-gallery-slide-left {
+  animation: slideInLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform;
+}
+
+.photo-gallery-slide-out-left {
+  animation: slideOutLeft 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  will-change: transform;
+}
+
+/* Reduce motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll,
+  .animate-scroll-reverse {
+    animation-duration: 0s;
+    transform: translateX(0);
+  }
+  
+  .reduce-motion,
+  .reduce-motion * {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+/* Custom animation classes */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+@keyframes pulse-slow {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.03);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes rotate-slow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-float {
+  animation: float 5s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 4s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.animate-rotate-slow {
+  animation: rotate-slow 15s linear infinite;
+  will-change: transform;
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+  will-change: transform, opacity;
+}
+
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-500 {
+  animation-delay: 500ms;
+}
+
+/* Component styles */
+.social-icon {
+  @apply w-10 h-10 flex items-center justify-center text-gray-500 hover:text-primary transition-colors;
+}
+
+/* Navbar Styles */
+.nav-link {
+  @apply px-3 py-2 text-base font-medium hover:text-primary transition-colors;
+}
+
+/* Utility classes */
+.dark {
+  background-color: #111827;
+  color: #f9fafb;
+}
+
+.text-primary {
+  color: var(--primary);
+}
+
+.text-secondary {
+  color: var(--secondary);
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+
+.bg-secondary {
+  background-color: var(--secondary);
+}
+
+/* Reduced motion preference - improves performance */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.reduce-motion *,
+.reduce-motion ::before,
+.reduce-motion ::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+/* Only add animation when intersection observer would trigger them */
+.animate-when-visible {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  will-change: opacity, transform;
+}
+
+.animate-when-visible.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sponsor slider animation */
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-reverse {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+  will-change: transform;
+}
+
+.animate-scroll-reverse {
+  animation: scroll-reverse 25s linear infinite;
+  will-change: transform;
+}
+
+/* Add for reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .animate-scroll, .animate-scroll-reverse {
+    animation: none;
+  }
+}
+
+.reduce-motion .animate-scroll, .reduce-motion .animate-scroll-reverse {
+  animation: none;
+} 
