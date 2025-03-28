@@ -32,6 +32,18 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
+# large image files
+/public/images/Photos/
+/public/images/officers/
+*.mp4
+*.mov
+*.MOV
+*.MP4
+
 # backup files
 /backup/
-/pages_backup/ 
+/pages_backup/
+
+# webpack cache
+.next/cache/webpack/**/*.pack
+.next/cache/webpack/**/*.pack.gz 
