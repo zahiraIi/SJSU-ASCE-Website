@@ -1,0 +1,9 @@
+name = "r2-proxy"
+main = "r2-worker.js"
+compatibility_date = "2023-05-18"
+account_id = "5fe977a09794af95887f17227c75441b"
+
+[[r2_buckets]]
+binding = "R2_BUCKET"
+bucket_name = "sjsuascewebsite" # Production bucket
+preview_bucket_name = "sjsuwebsite-dev" # Development/preview bucket 

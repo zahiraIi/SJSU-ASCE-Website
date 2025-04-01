@@ -16,21 +16,30 @@
     "fetch-companies-enhanced": "node scripts/fetch-companies-enhanced.js",
     "verify-urls": "node scripts/verify-company-urls.js",
     "process-photos": "node scripts/process-photos.js",
-    "watch-photos": "node scripts/watch-photos.js"
+    "watch-photos": "node scripts/watch-photos.js",
+    "r2-worker": "npx wrangler dev r2-worker.js --remote",
+    "dev:with-r2": "concurrently \"npm run dev\" \"npm run r2-worker\"",
+    "wrangler-login": "npx wrangler login"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "@aws-sdk/client-s3": "^3.777.0",
+    "@aws-sdk/s3-request-presigner": "^3.777.0",
     "@react-google-maps/api": "^2.20.6",
+    "backblaze-b2": "^1.7.0",
     "chokidar": "^3.6.0",
+    "encoding": "^0.1.13",
+    "firebase": "^11.5.0",
     "framer-motion": "^12.6.2",
     "heic-convert": "^2.1.0",
     "next": "^13.4.19",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-icons": "^5.5.0"
+    "react-icons": "^5.5.0",
+    "supports-color": "^10.0.0"
   },
   "devDependencies": {
     "@types/node": "^20.8.9",
@@ -38,13 +47,15 @@
     "@types/react-dom": "^18.2.14",
     "autoprefixer": "^10.4.21",
     "axios": "^1.8.4",
+    "concurrently": "^9.1.2",
     "google-auth-library": "^9.15.1",
     "googleapis": "^148.0.0",
     "mkdirp": "^3.0.1",
     "postcss": "^8.5.3",
     "sharp": "^0.33.5",
     "tailwindcss": "^3.4.17",
-    "typescript": "^5.2.2"
+    "typescript": "^5.2.2",
+    "wrangler": "^4.6.0"
   },
   "readme": {
     "scripts": {

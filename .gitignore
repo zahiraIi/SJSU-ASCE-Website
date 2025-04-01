@@ -35,10 +35,24 @@ next-env.d.ts
 # large image files
 /public/images/Photos/
 /public/images/officers/
+/public/images/projects/
+/public/images/sponsors/
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
 *.mp4
 *.mov
 *.MOV
 *.MP4
+
+# Keep specific images
+!/public/images/ASCELOGO/*.png
+!/public/images/ASCELOGO/*.jpg
+!/public/images/SJSUSPARTANLOGO/*.png
+!/public/images/static/*.png
+!/public/images/static/*.jpg
 
 # backup files
 /backup/

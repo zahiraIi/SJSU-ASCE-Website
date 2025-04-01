@@ -1,7 +1,8 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
+import { getImageUrl, handleImageError } from '../utils/imageUtils';
 
 interface OptimizedImageProps {
   src: string;
@@ -28,13 +29,23 @@ export default function OptimizedImage({
 }: OptimizedImageProps) {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
+  const [imageSrc, setImageSrc] = useState(getImageUrl(src));
   
-  // Use the original source image path 
-  // The more complex path optimization is causing issues
-  const imageSrc = error ? fallbackSrc : src;
+  useEffect(() => {
+    setImageSrc(getImageUrl(src));
+  }, [src]);
+  
+  const handleError = () => {
+    console.error(`Failed to load image: ${imageSrc}`);
+    if (imageSrc !== fallbackSrc) {
+      setImageSrc(fallbackSrc);
+    }
+    setError(true);
+    setIsLoading(false);
+  };
   
   return (
-    <>
+    <div className={`relative ${className}`}>
       {isLoading && (
         <div className="absolute inset-0 bg-gray-100 flex items-center justify-center z-10">
           <div className="w-10 h-10 border-3 border-primary/30 border-t-primary rounded-full animate-spin"></div>
@@ -44,7 +55,7 @@ export default function OptimizedImage({
       <Image
         src={imageSrc}
         alt={alt}
-        className={`${className} ${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
+        className={`${isLoading ? 'opacity-0' : 'opacity-100'} transition-opacity duration-300`}
         fill={fill}
         width={!fill ? width : undefined}
         height={!fill ? height : undefined}
@@ -53,12 +64,14 @@ export default function OptimizedImage({
         priority={priority}
         loading={priority ? undefined : "lazy"}
         onLoadingComplete={() => setIsLoading(false)}
-        onError={() => {
-          console.log(`Failed to load image: ${imageSrc}`);
-          setError(true);
-          setIsLoading(false);
-        }}
+        onError={handleError}
       />
-    </>
+      
+      {error && (
+        <div className="absolute inset-0 bg-gray-100 flex items-center justify-center">
+          <span className="text-sm text-gray-500">Image failed to load</span>
+        </div>
+      )}
+    </div>
   );
 } 
