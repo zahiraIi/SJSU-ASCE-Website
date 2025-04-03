@@ -62,7 +62,8 @@ function corsHeaders() {
   return {
     'Access-Control-Allow-Origin': '*',
     'Access-Control-Allow-Methods': 'GET, HEAD, OPTIONS',
-    'Access-Control-Allow-Headers': 'Content-Type',
+    'Access-Control-Allow-Headers': 'Content-Type, Range',
+    'Access-Control-Expose-Headers': 'Content-Length, Content-Range',
     'Access-Control-Max-Age': '86400'
   };
 }
