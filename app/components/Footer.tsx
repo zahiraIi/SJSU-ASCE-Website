@@ -8,12 +8,12 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube } from 'react
 
 export default function Footer() {
   return (
-    <footer className="bg-dark text-white pt-16 pb-8">
+    <footer className="bg-dark text-white pt-12 sm:pt-16 pb-6 sm:pb-8">
       <div className="container-custom">
         {/* Top section with logo and navigation */}
-        <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 mb-8 sm:mb-12">
           {/* Logo and about */}
-          <div className="col-span-1">
+          <div className="col-span-1 sm:col-span-2 md:col-span-1">
             <Link href="/" className="flex items-center mb-4">
               <div className="w-16 h-16 flex items-center justify-center">
                 <R2Image 
@@ -24,7 +24,7 @@ export default function Footer() {
                   className="brightness-0 invert object-contain"
                 />
               </div>
-              <span className="text-2xl font-display font-bold text-white ml-3 flex items-center">SJSU ASCE</span>
+              <span className="text-xl sm:text-2xl font-display font-bold text-white ml-3 flex items-center">SJSU ASCE</span>
             </Link>
             <p className="text-gray-400 mb-6">
               American Society of Civil Engineers at San Jose State University - Building the future of civil engineering since 1921.
@@ -47,7 +47,7 @@ export default function Footer() {
 
           {/* Navigation Links */}
           <div className="col-span-1">
-            <h3 className="text-lg font-bold mb-4">Navigation</h3>
+            <h3 className="text-base sm:text-lg font-bold mb-4">Navigation</h3>
             <ul className="space-y-2">
               <li><Link href="/about" className="text-gray-400 hover:text-white">About Us</Link></li>
               <li><Link href="/officers" className="text-gray-400 hover:text-white">Meet the Officers</Link></li>
@@ -59,7 +59,7 @@ export default function Footer() {
 
           {/* Resources */}
           <div className="col-span-1">
-            <h3 className="text-lg font-bold mb-4">Resources</h3>
+            <h3 className="text-base sm:text-lg font-bold mb-4">Resources</h3>
             <ul className="space-y-2">
               <li><Link href="/faq" className="text-gray-400 hover:text-white">FAQ</Link></li>
               <li><a href="https://forms.google.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-white">Membership Form</a></li>
@@ -70,7 +70,7 @@ export default function Footer() {
 
           {/* Contact Info */}
           <div className="col-span-1">
-            <h3 className="text-lg font-bold mb-4">Contact Us</h3>
+            <h3 className="text-base sm:text-lg font-bold mb-4">Contact Us</h3>
             <address className="not-italic text-gray-400">
               <p className="mb-2">Charles W. Davidson College of Engineering</p>
               <p className="mb-2">San Jose State University</p>
@@ -80,14 +80,15 @@ export default function Footer() {
             </address>
           </div>
         </div>
+        </div>
 
         {/* Bottom copyright section */}
         <div className="pt-8 border-t border-gray-800">
-          <div className="md:flex md:items-center md:justify-between">
-            <p className="text-sm text-gray-500">
+          <div className="flex flex-col items-center md:flex-row md:justify-between">
+            <p className="text-sm text-gray-500 text-center md:text-left">
               &copy; {new Date().getFullYear()} SJSU ASCE. All rights reserved.
             </p>
-            <div className="mt-4 md:mt-0">
+            <div className="mt-4 md:mt-0 text-center md:text-right">
               <Link href="/privacy" className="text-sm text-gray-500 hover:text-gray-400 mr-6">
                 Privacy Policy
               </Link>

@@ -395,32 +395,34 @@ export default function HomePage() {
         </div>
         
         {/* Content container with improved layout */}
-        <div className="px-6 py-32 z-20 relative">
-          <div className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left md:justify-between max-w-7xl mx-auto">
-            <div className="md:w-3/5 space-y-6">
+        <div className="px-4 sm:px-8 py-24 sm:py-32 z-20 relative">
+          <div className="flex flex-col md:flex-row items-center md:items-start text-center md:text-left max-w-7xl mx-auto">
+            <div className="md:w-3/5 space-y-6 w-full">
               <div className="relative">
-                <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold text-white leading-none tracking-wide drop-shadow-lg">
+                <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white leading-tight sm:leading-none tracking-wide drop-shadow-lg">
                   SJSU
-                  <span className="block mt-2">ASCE</span>
+                  <span className="block mt-1 sm:mt-2">ASCE</span>
                 </h1>
                 {/* Accent line */}
                 <div className="h-1 w-20 bg-blue-400 mt-6 md:ml-1 mx-auto md:mx-0"></div>
               </div>
               
-              <p className="text-white/90 text-xl max-w-xl leading-relaxed">
+              <p className="text-white/90 text-lg sm:text-xl max-w-xl leading-relaxed mx-auto md:mx-0">
                 Building the future of civil engineering through innovation, collaboration, and leadership.
               </p>
               
-              <div className="flex flex-wrap gap-4 justify-center md:justify-start pt-4">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center md:justify-start pt-4">
                 <a 
-                  href="/join" 
-                  className="px-8 py-3 bg-blue-600 text-white rounded text-sm uppercase tracking-widest hover:bg-blue-700 transition-all duration-300"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSfiECNFkhvyP4djptSQvhvxF5ZIKC-blItT9iIoPi72tuesZA/viewform" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto px-8 py-3 bg-blue-600 text-white rounded text-sm uppercase tracking-widest hover:bg-blue-700 transition-all duration-300"
                 >
                   Join Us
                 </a>
                 <a 
                   href="/about" 
-                  className="px-8 py-3 bg-transparent text-white border border-white/70 rounded text-sm uppercase tracking-widest hover:bg-white/10 transition-all duration-300"
+                  className="w-full sm:w-auto px-8 py-3 bg-transparent text-white border border-white/70 rounded text-sm uppercase tracking-widest hover:bg-white/10 transition-all duration-300"
                 >
                   Learn More
                 </a>
@@ -441,10 +443,10 @@ export default function HomePage() {
               </div>
             </div>
             
-            <div className="mt-12 md:mt-0 md:w-2/5 flex justify-center">
-              <div className="flex flex-col">
-                <div className="glass-card rounded-lg p-8 shadow-xl">
-                  <h3 className="text-white font-bold text-xl mb-3 flex items-center">
+            <div className="mt-12 md:mt-0 w-full md:w-2/5 flex justify-center md:justify-end">
+              <div className="flex flex-col w-full max-w-md">
+                <div className="glass-card rounded-lg p-6 sm:p-8 shadow-xl">
+                  <h3 className="text-white font-bold text-lg sm:text-xl mb-3 flex items-center">
                     <svg className="w-5 h-5 mr-2 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
                     </svg>
@@ -481,11 +483,11 @@ export default function HomePage() {
       </section>
 
       {/* What we offer section */}
-      <section className="py-20 bg-white">
+      <section className="py-16 sm:py-20 bg-white">
         <div className="container-custom px-4 mx-auto">
           <div className="text-center mb-12">
             <h5 className="text-primary uppercase tracking-wider font-medium mb-2">WHAT WE OFFER</h5>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">What you can get with ASCE membership</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">What you can get with ASCE membership</h2>
             <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
           </div>
           
@@ -535,16 +537,16 @@ export default function HomePage() {
           </div>
           
           {/* Benefit cards in 3 columns */}
-          <div className="grid md:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
             {benefits.map((benefit, index) => (
-              <div key={index} className="group bg-white border border-gray-100 shadow-sm p-6 hover:shadow-lg transition-all duration-300 rounded-xl transform hover:-translate-y-1">
+              <div key={index} className="group bg-white border border-gray-100 shadow-sm p-4 sm:p-6 hover:shadow-lg transition-all duration-300 rounded-xl transform hover:-translate-y-1">
                 <div className="flex justify-center mb-4">
                   <div className="inline-flex p-4 bg-blue-50 rounded-full text-primary transition-transform duration-300 group-hover:scale-110">
                     {benefit.icon}
                   </div>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-center">{benefit.title}</h3>
-                <p className="text-gray-600 text-center">{benefit.description}</p>
+                <h3 className="text-lg sm:text-xl font-bold mb-3 text-center">{benefit.title}</h3>
+                <p className="text-gray-600 text-center text-sm sm:text-base">{benefit.description}</p>
               </div>
             ))}
           </div>
@@ -554,14 +556,14 @@ export default function HomePage() {
       {/* Our Moments Section */}
       <section 
         ref={galleryRef} 
-        className="py-24 bg-white scroll-animate"
+        className="py-16 sm:py-24 bg-white scroll-animate"
       >
         <div className="container-custom px-4 mx-auto">
-          <div className="text-center mb-16">
+          <div className="text-center mb-12 sm:mb-16">
             <h5 className="text-primary uppercase tracking-wider font-medium mb-3">CHAPTER LIFE</h5>
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Our Moments</h2>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Our Moments</h2>
             <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
               Take a glimpse at our chapter activities, events, and memorable experiences.
             </p>
           </div>
@@ -592,23 +594,23 @@ export default function HomePage() {
       </section>
       
       {/* CTA Section */}
-      <section className="relative py-20 overflow-hidden bg-gradient-to-r from-primary to-blue-700 text-white">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-10 rounded-full transform translate-x-1/3 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 right-20 w-40 h-40 bg-white opacity-10 rounded-full transform translate-y-1/2"></div>
+      <section className="relative py-16 sm:py-20 overflow-hidden bg-gradient-to-r from-primary to-blue-700 text-white">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-white opacity-10 rounded-full transform translate-x-1/3 -translate-y-1/2 hidden sm:block"></div>
+        <div className="absolute bottom-0 right-20 w-40 h-40 bg-white opacity-10 rounded-full transform translate-y-1/2 hidden sm:block"></div>
         
         <div className="container-custom px-4 mx-auto relative z-10">
-          <div className="max-w-3xl">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to get started with ASCE?</h2>
-            <p className="text-xl text-white text-opacity-90 mb-8 leading-relaxed">
+          <div className="max-w-3xl text-center md:text-left">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">Ready to get started with ASCE?</h2>
+            <p className="text-lg sm:text-xl text-white text-opacity-90 mb-8 leading-relaxed">
               Join SJSU's ASCE chapter today and gain access to competitions, networking opportunities, 
               workshops, and industry connections that will help you build a successful career in civil engineering.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center md:justify-start">
               <a 
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfiECNFkhvyP4djptSQvhvxF5ZIKC-blItT9iIoPi72tuesZA/viewform" 
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center bg-white text-primary px-8 py-4 rounded-md font-medium hover:bg-gray-100 transition-colors duration-300 group"
+                className="w-full sm:w-auto inline-flex items-center justify-center bg-white text-primary px-8 py-4 rounded-md font-medium hover:bg-gray-100 transition-colors duration-300 group"
               >
                 <span>Become a Member</span>
                 <svg className="ml-2 w-5 h-5 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -617,7 +619,7 @@ export default function HomePage() {
               </a>
               <Link 
                 href="/contact" 
-                className="inline-flex items-center bg-transparent text-white border border-white px-8 py-4 rounded-md font-medium hover:bg-white hover:text-primary transition-colors duration-300"
+                className="w-full sm:w-auto inline-flex items-center justify-center bg-transparent text-white border border-white px-8 py-4 rounded-md font-medium hover:bg-white hover:text-primary transition-colors duration-300"
               >
                 <span>Contact Us</span>
               </Link>

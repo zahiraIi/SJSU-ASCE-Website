@@ -137,7 +137,7 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center group py-1">
-          <div className={`relative ${isScrolled ? 'h-10 w-24' : 'h-12 w-24'} mr-2 overflow-hidden transition-all duration-200`}>
+          <div className={`relative ${isScrolled ? 'h-8 w-20 md:h-10 md:w-24' : 'h-10 w-20 md:h-12 md:w-24'} mr-2 overflow-hidden transition-all duration-200`}>
             <R2Image
               path="ASCELOGO/ASCE.png"
               alt="SJSU ASCE Logo"
@@ -148,10 +148,10 @@ export default function Navbar() {
             />
           </div>
           <div className="flex flex-col ml-1">
-            <span className={`${isScrolled ? 'text-lg' : 'text-xl'} font-bold leading-tight transition-all duration-200 ${
+            <span className={`${isScrolled ? 'text-base md:text-lg' : 'text-lg md:text-xl'} font-bold leading-tight transition-all duration-200 ${
               isScrolled ? 'text-[#0055A2]' : 'text-white'
             }`}>SJSU ASCE</span>
-            <span className={`${isScrolled ? 'text-xs' : 'text-sm'} leading-tight transition-all duration-200 ${
+            <span className={`${isScrolled ? 'text-[10px] md:text-xs' : 'text-xs md:text-sm'} leading-tight transition-all duration-200 ${
               isScrolled ? 'text-gray-600' : 'text-gray-200'
             }`}>Student Chapter</span>
           </div>
