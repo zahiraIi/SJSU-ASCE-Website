@@ -80,7 +80,6 @@ export default function Footer() {
             </address>
           </div>
         </div>
-        </div>
 
         {/* Bottom copyright section */}
         <div className="pt-8 border-t border-gray-800">
