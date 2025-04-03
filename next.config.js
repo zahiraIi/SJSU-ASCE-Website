@@ -26,11 +26,27 @@ const nextConfig = {
     domains: [
       'f004.backblazeb2.com',    // Backblaze B2 direct file domain
       's3.us-west-004.backblazeb2.com', // S3-compatible endpoint
+      'pub-a786dffe779f45f1ad6552f22091f210.r2.dev', // R2 public URL
+      'sjsu-asce-website-gyyjmynsg-zahirs-projects-6ad41809.vercel.app', // Preview Vercel domain
+      'sjsu-asce-website.vercel.app', // Production Vercel domain
+      'vercel.app', // All Vercel subdomains
     ],
     remotePatterns: [
       {
         protocol: 'https',
         hostname: '**.backblazeb2.com',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.r2.dev',
+        port: '',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: '**.vercel.app',
         port: '',
         pathname: '/**',
       },
