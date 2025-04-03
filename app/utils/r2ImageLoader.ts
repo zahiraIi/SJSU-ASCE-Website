@@ -13,204 +13,204 @@ const USE_R2_STORAGE = process.env.NEXT_PUBLIC_USE_R2_STORAGE === 'true';
 const USE_SIGNED_URLS = process.env.NEXT_PUBLIC_USE_R2_SIGNED_URLS === 'true';
 
 /**
- * Map of local image paths to R2 Storage paths
- * This allows us to reference images using local paths in components
- * while loading them from R2 Storage
+ * Normalizes a path for comparison.
+ * - Converts to lowercase
+ * - Decodes URI components
+ * - Trims whitespace
+ * - Removes leading/trailing slashes
+ * - Removes common leading prefixes like '/images/' or '/images/Photos/'.
  */
-export const PATH_TO_R2_MAP: Record<string, string> = {
-  // ASCE Logo
-  '/images/ASCELOGO/ASCE.png': 'ASCELOGO/ASCE.png',
-  '/images/ASCELOGO/officer.jpg': 'ASCELOGO/officer.jpg',
-  
-  // FGM Pics
-  '/images/FGM Pics/DSC00698.JPG': 'FGM Pics/DSC00698.JPG',
-  '/images/FGM Pics/DSC00700.JPG': 'FGM Pics/DSC00700.JPG',
-  '/images/FGM Pics/possiblefrontpage.JPG': 'FGM Pics/possiblefrontpage.JPG',
-  '/images/FGM Pics/generalmeeting.JPG': 'FGM Pics/generalmeeting.JPG',
-  '/images/FGM Pics/generalmeeting2.JPG': 'FGM Pics/generalmeeting2.JPG',
-  '/images/FGM Pics/clubofficer1.JPG': 'FGM Pics/clubofficer1.JPG',
-  '/images/FGM Pics/clubofficer2.JPG': 'FGM Pics/clubofficer2.JPG',
-  '/images/FGM Pics/clubofficer3.JPG': 'FGM Pics/clubofficer3.JPG',
-  '/images/FGM Pics/clubofficer4.JPG': 'FGM Pics/clubofficer4.JPG',
-  '/images/FGM Pics/clubofficer5.JPG': 'FGM Pics/clubofficer5.JPG',
-  '/images/FGM Pics/clubofficer6.JPG': 'FGM Pics/clubofficer6.JPG',
-  '/images/FGM Pics/funnyclubofficer.JPG': 'FGM Pics/funnyclubofficer.JPG',
-  
-  // Hike 3-1
-  '/images/Hike 3-1/IMG_1607.jpg': 'Hike 3-1/IMG_1607.jpg',
-  '/images/Hike 3-1/IMG_1619.jpg': 'Hike 3-1/IMG_1619.jpg',
-  '/images/Hike 3-1/IMG_1638.jpg': 'Hike 3-1/IMG_1638.jpg',
-  '/images/Hike 3-1/IMG_6723.MOV': 'Hike 3-1/IMG_6723.MOV',
-  '/images/Hike 3-1/IMG_6774.JPG': 'Hike 3-1/IMG_6774.JPG',
-  '/images/Hike 3-1/IMG_6777.JPG': 'Hike 3-1/IMG_6777.JPG',
-  '/images/Hike 3-1/IMG_6794.MOV': 'Hike 3-1/IMG_6794.MOV',
-  
-  // L&L
-  '/images/L&L/jpg/2CF3DC47-7952-4E4F-9F59-FF38867A7D45.jpg': 'L&L/jpg/2CF3DC47-7952-4E4F-9F59-FF38867A7D45.jpg',
-  '/images/L&L/jpg/IMG_1424.jpg': 'L&L/jpg/IMG_1424.jpg',
-  '/images/L&L/jpg/IMG_2301.jpg': 'L&L/jpg/IMG_2301.jpg',
-  '/images/L&L/jpg/lunchandlearn.jpg': 'L&L/jpg/lunchandlearn.jpg',
-  '/images/L&L/jpg/lunchandlearn2.jpg': 'L&L/jpg/lunchandlearn2.jpg',
-  '/images/L&L/jpg/lunchandlearn3.jpg': 'L&L/jpg/lunchandlearn3.jpg',
-  '/images/L&L/jpg/lunchandlearn4.jpg': 'L&L/jpg/lunchandlearn4.jpg',
-  '/images/L&L/jpg/lunchandlearn5.jpg': 'L&L/jpg/lunchandlearn5.jpg',
-  '/images/L&L/jpg/lunchandlearn6.jpg': 'L&L/jpg/lunchandlearn6.jpg',
-  
-  // Monterrey 2-15
-  '/images/Monterrey 2-15/IMG_0911_Original.JPG': 'Monterrey 2-15/IMG_0911_Original.JPG',
-  '/images/Monterrey 2-15/IMG_0915_Original.JPG': 'Monterrey 2-15/IMG_0915_Original.JPG',
-  '/images/Monterrey 2-15/IMG_0968_Original.JPG': 'Monterrey 2-15/IMG_0968_Original.JPG',
-  
-  // SJSUSPARTANLOGO
-  '/images/SJSUSPARTANLOGO/sjsuspartanlogo.png': 'SJSUSPARTANLOGO/sjsuspartanlogo.png',
-  
-  // Tabling
-  '/images/Tabling/ascetabling.jpg': 'Tabling/ascetabling.jpg',
-  '/images/Tabling/ascetabling2.jpg': 'Tabling/ascetabling2.jpg',
-  '/images/Tabling/asce2025officers.jpg': 'Tabling/asce2025officers.jpg',
-  
-  // Event images
-  '/images/Events/3-20-Networking-Event/DSC02298.JPG': 'images/Events/3-20-Networking-Event/DSC02298.JPG',
-  '/images/Events/3-20-Networking-Event/DSC02302.JPG': 'images/Events/3-20-Networking-Event/DSC02302.JPG',
-  '/images/Events/3-20-Networking-Event/DSC02308.JPG': 'images/Events/3-20-Networking-Event/DSC02308.JPG',
-  '/images/Events/3-20-Networking-Event/DSC02312.JPG': 'images/Events/3-20-Networking-Event/DSC02312.JPG',
-  '/images/Events/3-20-Networking-Event/DSC02320.JPG': 'images/Events/3-20-Networking-Event/DSC02320.JPG',
-  '/images/Events/3-20-Networking-Event/DSC02340.JPG': 'images/Events/3-20-Networking-Event/DSC02340.JPG',
-  
-  // Officers
-  '/images/officers/Asma (ASCE officer photo verticle shot).jpg': 'officers/Asma (ASCE officer photo verticle shot).jpg',
-  '/images/officers/asma asce.jpg': 'officers/asma asce.jpg',
-  '/images/officers/stephanie.jpg': 'officers/stephanie.jpg',
-  '/images/officers/stephanie verticle shot.jpg': 'officers/stephanie verticle shot.jpg',
-  '/images/officers/yasmin.JPG': 'officers/yasmin.JPG',
-  
-  // Sponsors
-  '/images/sponsors/carlson-barbee-gibson-inc-cbg.png': 'sponsors/carlson-barbee-gibson-inc-cbg.png',
-  '/images/sponsors/city-of-palo-alto.png': 'sponsors/city-of-palo-alto.png',
-  '/images/sponsors/city-of-san-jose-public-works-department.png': 'sponsors/city-of-san-jose-public-works-department.png',
-  '/images/sponsors/civil-engineering-associates-inc.png': 'sponsors/civil-engineering-associates-inc.png',
-  '/images/sponsors/desilva-gates-construction.png': 'sponsors/desilva-gates-construction.png',
-  '/images/sponsors/graniterock.png': 'sponsors/graniterock.png',
-  '/images/sponsors/hmh-engineers.png': 'sponsors/hmh-engineers.png',
-  '/images/sponsors/kpff.png': 'sponsors/kpff.png',
-  '/images/sponsors/level-10-construction.png': 'sponsors/level-10-construction.png',
-  '/images/sponsors/mark-thomas.png': 'sponsors/mark-thomas.png',
-  '/images/sponsors/mcguire-and-hester.png': 'sponsors/mcguire-and-hester.png',
-  '/images/sponsors/ntk-construction-inc.png': 'sponsors/ntk-construction-inc.png',
-  '/images/sponsors/pase.png': 'sponsors/pase.png',
-  '/images/sponsors/performance-contracting-inc.png': 'sponsors/performance-contracting-inc.png',
-  '/images/sponsors/rodan-builders-inc.png': 'sponsors/rodan-builders-inc.png',
-  '/images/sponsors/rudolph-and-sletten-inc.png': 'sponsors/rudolph-and-sletten-inc.png',
-  '/images/sponsors/ruggeri-jensen-azar.png': 'sponsors/ruggeri-jensen-azar.png',
-  '/images/sponsors/schaaf-wheeler-consulting-civil-engineers.png': 'sponsors/schaaf-wheeler-consulting-civil-engineers.png',
-  '/images/sponsors/simpson-gumpertz-heger.png': 'sponsors/simpson-gumpertz-heger.png',
-  '/images/sponsors/technical-builders.png': 'sponsors/technical-builders.png',
-  '/images/sponsors/the-core-group.png': 'sponsors/the-core-group.png',
-  '/images/sponsors/vulcan-materials-company.png': 'sponsors/vulcan-materials-company.png',
-  '/images/sponsors/whiting-turner.png': 'sponsors/whiting-turner.png',
-  '/images/sponsors/xl-construction.png': 'sponsors/xl-construction.png',
-  
-  // Fallback image
-  '/images/fallback.jpg': 'images/fallback.jpg'
-};
-
-/**
- * Get an R2 Storage path from a local file path
- */
-export function getR2PathFromLocal(path: string): string | null {
-  // Direct lookup
-  if (PATH_TO_R2_MAP[path]) {
-    return PATH_TO_R2_MAP[path];
-  }
-  
-  // Try a partial match using the filename
-  const filename = path.split('/').pop()?.toLowerCase() || '';
-  if (filename) {
-    const partialMatches = Object.entries(PATH_TO_R2_MAP).filter(([key]) => 
-      key.toLowerCase().includes(filename)
-    );
-    
-    if (partialMatches.length > 0) {
-      return partialMatches[0][1];
+function normalizePath(path: string, isLocal: boolean = false): string {
+  let normalized = decodeURIComponent(path).toLowerCase().trim();
+  if (isLocal) {
+    if (normalized.startsWith('/images/photos/')) { // Check for '/images/Photos/' first
+      normalized = normalized.substring(15); 
+    } else if (normalized.startsWith('/images/')) { // Then check for '/images/'
+      normalized = normalized.substring(7); 
     }
   }
-  
-  return null;
+  // Remove any remaining leading/trailing slashes
+  if (normalized.startsWith('/')) {
+    normalized = normalized.substring(1);
+  }
+  if (normalized.endsWith('/')) {
+    normalized = normalized.substring(0, normalized.length - 1);
+  }
+  return normalized;
+}
+
+/**
+ * Finds the best matching R2 object key for a requested local path.
+ * Prioritizes exact path matches, then filename matches, using directory hints for tie-breaking.
+ *
+ * @param localPath The requested local path (e.g., '/images/FGM Pics/possiblefrontpage.JPG')
+ * @param r2FileList The list of actual keys in the R2 bucket (e.g., ['FGM Pics/possiblefrontpage.JPG', ...])
+ * @returns The best matching R2 key or null.
+ */
+export function findR2KeyForLocalPath(localPath: string, r2FileList: string[]): string | null {
+  if (!localPath || !r2FileList || r2FileList.length === 0) {
+    return null;
+  }
+
+  const normalizedLocalPath = normalizePath(localPath, true); // Indicate it's a local path
+  if (!normalizedLocalPath) return null;
+
+  const normalizedR2Files = r2FileList.map(key => ({
+    original: key,
+    normalized: normalizePath(key, false) // Normalize R2 keys
+  }));
+
+  // 1. Try exact match on normalized paths
+  const exactMatch = normalizedR2Files.find(file => file.normalized === normalizedLocalPath);
+  if (exactMatch) {
+    // console.log(`Exact match found for ${localPath}: ${exactMatch.original}`);
+    return exactMatch.original;
+  }
+
+  // 2. If no exact match, try matching by filename and directory hints
+  const localPathSegments = normalizedLocalPath.split('/');
+  const filename = localPathSegments.pop(); // Get the filename part
+  if (!filename) return null; // Should not happen if normalizedLocalPath is valid
+
+  // Find all R2 keys ending with the same filename
+  const potentialMatches = normalizedR2Files.filter(file => file.normalized.endsWith('/' + filename) || file.normalized === filename);
+
+  if (potentialMatches.length === 0) {
+     // console.warn(`No R2 key found ending with filename: ${filename} (from local path ${localPath})`);
+    return null;
+  }
+
+  if (potentialMatches.length === 1) {
+    // console.log(`Single filename match found for ${localPath}: ${potentialMatches[0].original}`);
+    return potentialMatches[0].original; // Only one candidate, return it
+  }
+
+  // 3. Tie-breaking (potentialMatches.length > 1)
+  // console.warn(`Multiple potential matches for filename ${filename} (from local path ${localPath}). Attempting tie-break.`);
+
+  const localParentPath = localPathSegments.join('/'); // e.g., "fgm pics"
+
+  // Initialize bestMatch with the first candidate and calculate its initial score
+  let bestMatch = potentialMatches[0];
+  let highestScore = -1;
+
+  const initialMatchSegments = bestMatch.normalized.split('/');
+  initialMatchSegments.pop(); // Remove filename
+  const initialMatchParentPath = initialMatchSegments.join('/');
+  if (localParentPath && initialMatchParentPath.endsWith(localParentPath)) {
+      highestScore = localParentPath.length; // Score based on matching parent path length
+  }
+
+  // Iterate through the rest of the potential matches (starting from the second one)
+  for (let i = 1; i < potentialMatches.length; i++) {
+      const currentMatch = potentialMatches[i];
+      const matchSegments = currentMatch.normalized.split('/');
+      matchSegments.pop(); // Remove filename
+      const matchParentPath = matchSegments.join('/');
+
+      let currentScore = -1; // Default score if no parent match
+      if (localParentPath && matchParentPath.endsWith(localParentPath)) {
+          currentScore = localParentPath.length;
+      }
+
+      // console.log(`  - Candidate: ${currentMatch.original}, Parent: ${matchParentPath}, Score: ${currentScore}`);
+
+      if (currentScore > highestScore) {
+          highestScore = currentScore;
+          bestMatch = currentMatch;
+      }
+      // Optional: Add more sophisticated scoring tie-breakers here if needed
+      // (e.g., if scores are equal, prefer shorter overall path?)
+  }
+
+  // console.log(`Tie-break winner for ${localPath}: ${bestMatch.original} (Score: ${highestScore})`);
+  return bestMatch.original; // Return the best one found (could still be the first one)
 }
 
 /**
  * Get a URL for an image from Cloudflare R2
  */
-export async function getR2ImageUrl(path: string): Promise<string> {
-  if (!path) return FALLBACK_IMAGE;
-  
-  console.log('getR2ImageUrl - Input path:', path);
-  console.log('getR2ImageUrl - USE_SIGNED_URLS:', USE_SIGNED_URLS);
-  
+export async function getR2ImageUrl(r2Key: string): Promise<string> {
+  if (!r2Key) return FALLBACK_IMAGE;
+
+  // console.log('getR2ImageUrl - R2 Key:', r2Key);
+  // console.log('getR2ImageUrl - USE_SIGNED_URLS:', USE_SIGNED_URLS);
+
   try {
-    // If it's already a full URL, return as is
-    if (path.startsWith('http')) {
-      console.log('getR2ImageUrl - Using existing URL:', path);
-      return path;
+    // If it's already a full URL, return as is (shouldn't happen with r2Key, but safe check)
+    if (r2Key.startsWith('http')) {
+      console.warn('getR2ImageUrl called with full URL:', r2Key);
+      return r2Key;
     }
-    
+
     // Get the appropriate URL from R2 based on configuration
     let url: string;
     if (USE_SIGNED_URLS) {
       // Use the API route which handles authentication server-side
-      url = `/api/r2image?path=${encodeURIComponent(path)}`;
-      console.log('getR2ImageUrl - Using API route:', url);
+      url = `/api/r2image?path=${encodeURIComponent(r2Key)}`;
+      // console.log('getR2ImageUrl - Using API route:', url);
     } else {
       // Get a public URL (for public buckets)
-      url = getPublicR2Url(path);
+      url = getPublicR2Url(r2Key);
+      // console.log('getR2ImageUrl - Using Public URL:', url);
     }
-    
-    console.log('getR2ImageUrl - Got R2 URL:', url);
+
+    // console.log('getR2ImageUrl - Got R2 URL:', url);
     return url;
   } catch (error) {
-    console.error('Error getting R2 image URL:', error);
+    console.error(`Error getting R2 image URL for key ${r2Key}:`, error);
     return FALLBACK_IMAGE;
   }
 }
 
 /**
- * Get an image URL from a path, checking R2 Storage first
+ * Get an image URL, attempting to load from R2 Storage first if enabled.
+ * Requires the list of files currently in the R2 bucket.
+ *
+ * @param requestedPath The desired path, often a local path like '/images/logo.png'
+ * @param r2FileList The list of actual file keys in the R2 bucket. Pass null if R2 is disabled or list is unavailable.
+ * @returns A promise resolving to the best available image URL (R2 or original path).
  */
-export async function loadImage(path: string): Promise<string> {
-  if (!path) return FALLBACK_IMAGE;
-  
-  console.log('loadImage - Input path:', path);
-  
+export async function loadImage(requestedPath: string, r2FileList: string[] | null): Promise<string> {
+  if (!requestedPath) return FALLBACK_IMAGE;
+
+  // console.log('loadImage - Requested path:', requestedPath);
+
   try {
     // If it's already a full URL, return as is
-    if (path.startsWith('http')) {
-      console.log('loadImage - Using existing URL:', path);
-      return path;
+    if (requestedPath.startsWith('http')) {
+      // console.log('loadImage - Using existing URL:', requestedPath);
+      return requestedPath;
     }
-    
-    // If R2 storage is enabled
-    if (USE_R2_STORAGE) {
-      // Try to find an R2 path for this local path
-      const r2Path = getR2PathFromLocal(path);
-      if (r2Path) {
-        console.log('loadImage - Found R2 mapping:', path, ' -> ', r2Path);
-        
-        // Get the image URL from R2
+
+    // If R2 storage is enabled and we have a file list
+    if (USE_R2_STORAGE && r2FileList) {
+      // Try to find an R2 key matching the requested local path's filename
+      const r2Key = findR2KeyForLocalPath(requestedPath, r2FileList); // Calls the updated function
+
+      if (r2Key) {
+        // console.log('loadImage - Found R2 key:', r2Key, 'for requested path:', requestedPath);
         try {
-          const url = await getR2ImageUrl(r2Path);
-          console.log('loadImage - Using R2 URL:', url);
+          const url = await getR2ImageUrl(r2Key);
+          // console.log('loadImage - Using R2 URL:', url);
           return url;
         } catch (error) {
-          console.error('Error fetching from R2, falling back to local path:', error);
+          console.error(`Error fetching R2 URL for key ${r2Key}, falling back to original path:`, error);
+          // Fall through to return original path on error
         }
+      } else {
+        // console.warn(`loadImage - No R2 key found for requested path: ${requestedPath}`);
       }
+    } else if (USE_R2_STORAGE && !r2FileList) {
+       console.warn(`loadImage - R2 storage enabled but file list not provided for path: ${requestedPath}. Cannot search R2.`);
     }
-    
-    // If no R2 mapping found or R2 is disabled, return the original path
-    console.warn(`No R2 mapping found for: ${path}`);
-    return path;
+
+    // If R2 is disabled, file list wasn't provided, no R2 key found, or R2 fetch failed, return the original path
+    // console.log('loadImage - Falling back to original path:', requestedPath);
+    return requestedPath;
+
   } catch (err) {
-    console.error('Error loading image:', err);
+    console.error(`Error loading image for path ${requestedPath}:`, err);
     return FALLBACK_IMAGE;
   }
 } 

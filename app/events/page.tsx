@@ -5,6 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import PhotoGallery from '../components/PhotoGallery';
 import { getPhotosByCategory } from '../utils/photoData';
+import R2Image from '../components/R2Image';
 
 // Define CalendarEvent interface here instead of importing it
 interface CalendarEvent {
@@ -16,6 +17,7 @@ interface CalendarEvent {
   endTime: Date;
   category?: string;
   link?: string;
+  imagePath?: string;
 }
 
 // Event categories with icons
@@ -93,7 +95,7 @@ export default function EventsPage() {
     'Workshops & Training',
     'Competitions',
     'Networking Events',
-    'General'
+    // 'General' // Removed to hide this section
   ];
   
   // Load events from API route
@@ -173,20 +175,29 @@ export default function EventsPage() {
         {/* Featured Event Banner */}
         {featuredEvent ? (
           <div className="mb-16 relative overflow-hidden rounded-xl shadow-lg">
+            {/* Gradient Overlay - always present */}
             <div className="absolute inset-0 bg-gradient-to-r from-primary to-primary-dark opacity-90 z-10"></div>
-            <div className="absolute inset-0">
-              <img 
-                src="/images/projects/09-01-23/IMG_0393-1.jpg" 
-                alt="ASCE Event" 
-                className="absolute inset-0 w-full h-full object-cover"
-              />
-            </div>
+            
+            {/* Conditionally render R2Image only if imagePath exists */}
+            {featuredEvent.imagePath && (
+              <div className="absolute inset-0">
+                <R2Image 
+                  path={featuredEvent.imagePath} // Use event's imagePath directly
+                  alt={featuredEvent.title || "ASCE Event Background"} 
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+              </div>
+            )}
+            
+            {/* Text Content */}
             <div className="relative z-20 p-8 md:p-12 text-white">
               <div className="inline-block bg-secondary text-primary font-bold px-4 py-2 rounded-full text-sm mb-4">
                 FEATURED EVENT
               </div>
               <h2 className="text-3xl md:text-4xl font-bold mb-4">{featuredEvent.title}</h2>
-              <p className="text-xl mb-6 max-w-2xl">{featuredEvent.description.split('\n')[0]}</p>
+              <p className="text-xl mb-6 max-w-2xl">
+                {featuredEvent.description?.replace(/ImagePath:[^\n]+\n?/i, '').split('\n')[0]}
+              </p>
               <div className="flex flex-wrap gap-6 mb-6">
                 <div className="flex items-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -443,8 +454,8 @@ export default function EventsPage() {
               </Link>
             </div>
             <div className="relative min-h-[200px] md:min-h-full">
-              <img 
-                src="/images/projects/09-01-23/IMG_0381-1.jpg" 
+              <R2Image 
+                path="projects/09-01-23/IMG_0381-1.jpg"
                 alt="ASCE Event Proposal" 
                 className="absolute inset-0 w-full h-full object-cover"
               />

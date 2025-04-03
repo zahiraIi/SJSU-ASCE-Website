@@ -1,9 +1,8 @@
 'use client';
 
 import React, { useEffect, useRef, useState } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-import OptimizedImage from '../components/OptimizedImage';
+import R2Image from '../components/R2Image';
 
 interface Officer {
   name: string;
@@ -22,27 +21,6 @@ export default function AboutPage() {
   const headerRef = useRef<HTMLDivElement>(null);
   const missionRef = useRef<HTMLDivElement>(null);
   const officersRef = useRef<HTMLDivElement>(null);
-
-  // Function to ensure proper image path formatting with optimized paths
-  const getImageUrl = (imagePath: string) => {
-    // Extract just the filename from complex paths
-    if (imagePath.includes('Photos') || imagePath.includes('drive-download')) {
-      const fileName = imagePath.split('/').pop() || '';
-      return `/images/ASCELOGO/officer.jpg`; // Use default officer image for now
-    }
-    
-    // Always start from the public folder root
-    const path = imagePath.startsWith('/') ? imagePath : `/${imagePath}`;
-    // Handle spaces in filenames by encoding them
-    return path.replace(/ /g, '%20');
-  };
-
-  // Add a function to generate a more optimized image path
-  const getOptimizedImagePath = (originalPath: string) => {
-    // Try to use a more direct path if available
-    const fileName = originalPath.split('/').pop() || '';
-    return `/images/officers/${fileName}`;
-  };
 
   // Optimized animation effect on scroll
   useEffect(() => {
@@ -121,74 +99,74 @@ export default function AboutPage() {
     {
       name: "Ankush",
       role: "President",
-      image: "/images/officers/ankush.jpeg", 
+      image: "officers/ankush.jpeg",
       email: "ankush@sjsu.edu",
       linkedIn: "https://www.linkedin.com/in/ankushbhatia4/"
     },
     {
       name: "Stephanie",
       role: "Vice President",
-      image: "/images/officers/stephanie.jpg", 
+      image: "officers/stephanie.jpg",
       email: "stephanie@sjsu.edu",
       linkedIn: "https://www.linkedin.com/in/stephanieluwis/"
     },
     {
       name: "Asmae",
       role: "Secretary",
-      image: "/images/officers/asma asce.jpg", 
+      image: "officers/asma asce.jpg",
       email: "asmae@sjsu.edu"
     },
     {
       name: "Ben",
       role: "Co-Treasurer",
-      image: "/images/officers/d4c39421-4001-41d8-82cd-6ac0fa4c0ade.jpg",
+      image: "officers/d4c39421-4001-41d8-82cd-6ac0fa4c0ade.jpg",
       email: "ben@sjsu.edu",
       linkedIn: "https://www.linkedin.com/in/ben-dat-pham-civil/"
     },
     {
       name: "Alma",
       role: "Membership Chair",
-      image: "/images/officers/85f444a7-1db8-4102-ab6e-f44eacf93e2f.jpg",
+      image: "officers/85f444a7-1db8-4102-ab6e-f44eacf93e2f.jpg",
       email: "alma@sjsu.edu",
       linkedIn: "https://www.linkedin.com/in/alma-mata/"
     },
     {
       name: "April",
       role: "Project Manager",
-      image: "/images/officers/f113a098-7ae1-42f6-a4db-8646b671631d.jpg",
+      image: "officers/f113a098-7ae1-42f6-a4db-8646b671631d.jpg",
       email: "april@sjsu.edu",
       linkedIn: "https://www.linkedin.com/in/april-santillan-286973165/"
     },
     {
       name: "Del",
       role: "Events Coordinator",
-      image: "/images/officers/Del.jpg",
+      image: "officers/del.jpg",
       email: "del@sjsu.edu"
     },
     {
       name: "Asa",
       role: "Technical Activities Chair",
-      image: "/images/officers/b4b92669-664b-423a-8a66-daab75c70f0f.jpg",
+      image: "officers/b4b92669-664b-423a-8a66-daab75c70f0f.jpg",
       email: "asa@sjsu.edu",
       linkedIn: "https://www.linkedin.com/in/asa-flores/"
     },
     {
       name: "Sonia",
       role: "Steel Bridge Captain",
-      image: "/images/officers/dddf7369-c4f1-40b8-a0a5-1acdd56f1998.jpg",
+      image: "officers/dddf7369-c4f1-40b8-a0a5-1acdd56f1998.jpg",
       email: "sonia@sjsu.edu",
       linkedIn: "https://www.linkedin.com/in/soniaguzmanalvarez/"
     },
     {
       name: "Jamie",
       role: "Concrete Canoe Captain",
-      image: "/images/officers/fb4f7744-c9b1-4e01-9a3a-3c7a70567696.jpg",
+      image: "officers/fb4f7744-c9b1-4e01-9a3a-3c7a70567696.jpg",
       email: "jamie@sjsu.edu"
     },
     {
       name: "Yaser",
       role: "Co-Treasurer",
-      image: "/images/officers/f1af8a86-dddd-4270-b38a-6fdb16b0b393.jpg",
+      image: "officers/f1af8a86-dddd-4270-b38a-6fdb16b0b393.jpg",
       email: "yaser@sjsu.edu",
       linkedIn: "https://www.linkedin.com/in/yaser-osman-9a99b4343/"
     }
@@ -371,18 +349,10 @@ export default function AboutPage() {
                     </div>
                   </div>
                   
-                  {/* Simple direct image tag as immediate solution */}
-                  <img
-                    src={officer.image}
+                  <R2Image
+                    path={officer.image}
                     alt={`${officer.name} - ${officer.role}`}
-                    className="officer-card-image"
-                    loading="lazy"
-                    onError={(e) => {
-                      // Fallback to default officer image if loading fails
-                      console.log(`Failed to load image: ${officer.image}`);
-                      const target = e.target as HTMLImageElement;
-                      target.src = '/images/ASCELOGO/officer.jpg';
-                    }}
+                    className="officer-card-image object-cover"
                   />
                 </div>
                 

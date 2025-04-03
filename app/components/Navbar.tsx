@@ -4,6 +4,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { FaBars, FaTimes } from 'react-icons/fa';
+import R2Image from './R2Image';
 
 // SJSU Official Colors
 const SJSU_COLORS = {
@@ -137,13 +138,12 @@ export default function Navbar() {
         {/* Logo */}
         <Link href="/" className="flex items-center group py-1">
           <div className={`relative ${isScrolled ? 'h-10 w-24' : 'h-12 w-24'} mr-2 overflow-hidden transition-all duration-200`}>
-            <Image 
-              src="/images/ASCELOGO/ASCE.png"
-              alt="SJSU ASCE Logo" 
-              fill
-              priority
-              sizes="96px"
-              style={{ objectFit: 'contain', objectPosition: 'left center', willChange: 'auto' }}
+            <R2Image
+              path="ASCELOGO/ASCE.png"
+              alt="SJSU ASCE Logo"
+              width="100%"
+              height="100%"
+              style={{ objectPosition: 'left center', objectFit: 'contain' }}
               className={isScrolled ? "brightness-0 invert" : "brightness-100 invert-0"}
             />
           </div>

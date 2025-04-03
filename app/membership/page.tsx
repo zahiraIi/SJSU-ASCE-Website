@@ -1,6 +1,8 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import Head from 'next/head';
+import R2Image from '../components/R2Image';
 
 export default function MembershipPage() {
   // Update with your actual Google Form URL
@@ -61,10 +63,10 @@ export default function MembershipPage() {
             </div>
             
             <div className="rounded-lg overflow-hidden shadow-md">
-              <img 
-                src="/images/asce-membership.png" 
+              <R2Image 
+                path="asce-membership.png"
                 alt="ASCE Membership Benefits" 
-                className="w-full h-auto" 
+                className="w-full h-auto"
                 style={{ maxHeight: '350px', objectFit: 'cover', objectPosition: 'center' }}
               />
               <div className="bg-primary p-4 text-white text-center">
@@ -135,10 +137,12 @@ export default function MembershipPage() {
           <div className="md:col-span-2 bg-white p-8 rounded-lg shadow-md text-center">
             <div className="mb-6">
               <div className="mx-auto w-32 h-32 relative mb-4">
-                <img 
-                  src="/images/ASCELOGO/ascelogo.png" 
+                <R2Image 
+                  path="ASCELOGO/ascelogo.png"
                   alt="ASCE Logo" 
-                  className="absolute inset-0 w-full h-full object-contain mx-auto"
+                  className="w-full h-full object-contain mx-auto"
+                  width={128}
+                  height={128}
                 />
               </div>
               <h3 className="text-xl font-bold">Ready to join?</h3>

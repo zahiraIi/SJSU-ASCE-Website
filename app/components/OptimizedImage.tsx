@@ -19,7 +19,7 @@ interface OptimizedImageProps {
 export default function OptimizedImage({
   src,
   alt,
-  fallbackSrc = '/images/ASCELOGO/officer.jpg',
+  fallbackSrc = 'ASCELOGO/officer.jpg',
   className = '',
   fill = false,
   width,

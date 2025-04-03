@@ -15,8 +15,8 @@ export default function R2TestPage() {
       try {
         setLoading(true);
         
-        // Get all files from the images directory
-        const imageFiles = await listR2Objects('images');
+        // Get all files starting with ASCELOGO/
+        const imageFiles = await listR2Objects('ASCELOGO');
         
         setFiles(imageFiles);
         setLoading(false);

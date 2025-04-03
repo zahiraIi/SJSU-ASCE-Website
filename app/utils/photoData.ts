@@ -27,7 +27,7 @@ const createSequentialArray = (prefix: string, start: number, count: number, suf
 // Define photo paths and metadata
 export const getAllPhotos = (): Photo[] => {
   const photos: Photo[] = [
-    // Lunch & Learn Photos - now referencing the jpg subfolder
+    // Lunch & Learn Photos - updated path
     ...[
       // Specific named files
       'IMG_1424.jpg',
@@ -67,12 +67,12 @@ export const getAllPhotos = (): Photo[] => {
       'lunchandlearn5.jpg',
       'lunchandlearn6.jpg'
     ].map(filename => ({
-      src: `/images/Photos/L&L/jpg/${filename}`,
+      src: `L&L/jpg/${filename}`,
       alt: `Lunch & Learn Event - ${filename.split('.')[0]}`,
       category: photoCategories.LUNCH_AND_LEARN
     })),
 
-    // Social Events - Networking
+    // Social Events - Networking - updated path
     ...[
       // Add actual filenames here
       'DSC00698.JPG',
@@ -84,24 +84,24 @@ export const getAllPhotos = (): Photo[] => {
       'DSC00716.JPG',
       'DSC00718.JPG'
     ].map(filename => ({
-      src: `/images/Photos/FGM Pics/${filename}`,
+      src: `FGM Pics/${filename}`,
       alt: `ASCE Event - ${filename.split('.')[0]}`,
       category: photoCategories.NETWORKING
     })),
 
-    // Social Events - General
+    // Social Events - General - updated path
     ...[
       'possiblefrontpage.JPG',
       'generalmeeting.JPG',
       'generalmeeting2.JPG',
       'generalmeeting(1).JPG'
     ].map(filename => ({
-      src: `/images/Photos/FGM Pics/${filename}`,
+      src: `FGM Pics/${filename}`,
       alt: `ASCE Meeting - ${filename.split('.')[0].replace(/([A-Z])/g, ' $1').trim()}`,
       category: photoCategories.SOCIAL_EVENTS
     })),
 
-    // Officers
+    // Officers - updated path
     ...[
       'clubofficer1.JPG',
       'clubofficer2.JPG',
@@ -111,20 +111,26 @@ export const getAllPhotos = (): Photo[] => {
       'clubofficer6.JPG',
       'funnyclubofficer.JPG'
     ].map(filename => ({
-      src: `/images/Photos/FGM Pics/${filename}`,
+      src: `FGM Pics/${filename}`,
       alt: `ASCE Officer - ${filename.split('.')[0]}`,
       category: photoCategories.OFFICERS
     })),
 
-    // Tabling Photos
+    // Tabling Photos - updated path
     ...[
       'ascetabling.jpg',
       'ascetabling2.jpg',
       'asce2025officers.jpg',
-      'DSC04632.jpg',
-      'DSC04633.jpg'
+      'DSC04632.JPG',
+      'DSC04633.JPG',
+      'DSC04634.JPG',
+      'DSC04635.JPG',
+      'DSC04636.JPG',
+      'DSC04637.JPG',
+      'DSC04638.JPG',
+      'DSC04639.JPG'
     ].map(filename => ({
-      src: `/images/Photos/Tabling/${filename}`,
+      src: `Tabling/${filename}`,
       alt: `ASCE Tabling - ${filename.split('.')[0]}`,
       category: photoCategories.TABLING
     }))

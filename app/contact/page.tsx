@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaMapMarkerAlt, FaEnvelope, FaInfoCircle } from 'react-icons/fa';
+import R2Image from '../components/R2Image';
 
 interface FormData {
   name: string;
@@ -56,7 +57,8 @@ export default function ContactPage() {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
-          message: formData.message
+          message: formData.message,
+          agreement: formData.agreement
         }),
       });
       
@@ -179,10 +181,11 @@ export default function ContactPage() {
             transition={{ duration: 0.5 }}
             className="mb-4"
           >
-            <img 
-              src="/images/ASCELOGO/ASCE.png" 
+            <R2Image 
+              path="ASCELOGO/ASCE.png"
               alt="SJSU ASCE Logo" 
               className="h-20 w-auto"
+              height={80}
             />
           </motion.div>
           <motion.h1 

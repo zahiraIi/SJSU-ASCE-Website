@@ -4,8 +4,8 @@
 const nextConfig = {
   reactStrictMode: true,
   experimental: {
-    // Disable server actions as they're causing issues
-    serverActions: false,
+    // Enable server actions as they are needed for googleCalendar.ts
+    serverActions: true,
   },
   // Fix for node-fetch and debug module issues
   webpack: (config, { isServer }) => {

@@ -11,6 +11,7 @@ export interface CalendarEvent {
   endTime: Date;
   category?: string;
   link?: string;
+  imagePath?: string;
 }
 
 // Configure calendar settings
@@ -22,14 +23,42 @@ const isCalendarConfigured = !!(CALENDAR_ID && API_KEY);
 
 // Map Google Calendar event to our application event format
 function mapGoogleEventToCalendarEvent(event: any): CalendarEvent {
-  // Extract the event category from the description or color
+  // Default category
   let category = 'General';
+  let imagePath: string | undefined = undefined;
+  
+  // 1. Check for explicit category in description
   if (event.description) {
     const categoryMatch = event.description.match(/Category:\s*([^,\n]+)/i);
     if (categoryMatch && categoryMatch[1]) {
       category = categoryMatch[1].trim();
     }
+
+    // Check for explicit image path in description
+    const imagePathMatch = event.description.match(/ImagePath:\s*([^\n]+)/i);
+    if (imagePathMatch && imagePathMatch[1]) {
+      imagePath = imagePathMatch[1].trim();
+    }
   }
+
+  // 2. If no explicit category, check title for keywords (only if category is still 'General')
+  if (category === 'General' && event.summary) {
+    const title = event.summary.toLowerCase();
+    if (title.includes('workshop') || title.includes('training')) {
+      category = 'Workshops & Training';
+    } else if (title.includes('competition')) {
+      category = 'Competitions';
+    } else if (title.includes('networking')) {
+      category = 'Networking Events';
+    } else if (title.includes('meeting')) {
+      category = 'Meetings'; // Or keep as General if preferred
+    } else if (title.includes('social')) {
+      category = 'Social Events'; // Or keep as General if preferred
+    }
+    // Add more keyword checks as needed
+  }
+
+  // 3. Could add fallback to event colorId mapping here if desired
 
   return {
     id: event.id,
@@ -38,8 +67,9 @@ function mapGoogleEventToCalendarEvent(event: any): CalendarEvent {
     location: event.location || '',
     startTime: new Date(event.start.dateTime || event.start.date),
     endTime: new Date(event.end.dateTime || event.end.date),
-    category: category,
-    link: event.htmlLink || ''
+    category: category, // Use the determined category
+    link: event.htmlLink || '',
+    imagePath: imagePath
   };
 }
 

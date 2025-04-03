@@ -1,55 +1,47 @@
 'use client';
 
 import React from 'react';
-import Image from 'next/image';
-import SponsorLogo from './SponsorLogos';
+// Removed unused: import Image from 'next/image';
+import R2Image from '../components/R2Image'; // Import R2Image
+// Removed unused import SponsorLogo
 
 // Updated sponsor data with real companies
 const SPONSORS = [
   // Construction Management Companies
-  { id: 1, name: 'City of San Jose, Public Works Department', logo: '/images/sponsors/city-of-san-jose-public-works-department.png', url: 'https://www.sanjoseca.gov/your-government/departments-offices/public-works' },
-  { id: 2, name: 'DeSilva Gates Construction', logo: '/images/sponsors/desilva-gates-construction.png', url: 'https://desilvagates.com/' },
-  { id: 3, name: 'Graniterock', logo: '/images/sponsors/graniterock.png', url: 'https://www.graniterock.com/' },
-  { id: 4, name: 'Level 10 Construction', logo: '/images/sponsors/level-10-construction.png', url: 'https://www.level10gc.com/' },
-  { id: 5, name: 'McGuire and Hester', logo: '/images/sponsors/mcguire-and-hester.png', url: 'https://www.mcguireandhester.com/' },
-  { id: 6, name: 'Performance Contracting, Inc.', logo: '/images/sponsors/performance-contracting-inc.png', url: 'https://www.pcg.com/' },
-  { id: 7, name: 'Rodan Builders, Inc.', logo: '/images/sponsors/rodan-builders-inc.png', url: 'https://www.rodanbuilders.com/' },
-  { id: 8, name: 'Rudolph and Sletten, Inc.', logo: '/images/sponsors/rudolph-and-sletten-inc.png', url: 'https://www.rsconstruction.com/' },
-  { id: 9, name: 'Simpson Gumpertz & Heger', logo: '/images/sponsors/simpson-gumpertz-heger.png', url: 'https://www.sgh.com/' },
-  { id: 10, name: 'Technical Builders', logo: '/images/sponsors/technical-builders.png', url: 'https://www.tbibuild.com/' },
-  { id: 11, name: 'The CORE Group', logo: '/images/sponsors/the-core-group.png', url: 'https://www.coregroupus.com/' },
-  { id: 12, name: 'Vulcan Materials Company', logo: '/images/sponsors/vulcan-materials-company.png', url: 'https://www.vulcanmaterials.com/' },
-  { id: 13, name: 'Whiting-Turner', logo: '/images/sponsors/whiting-turner.png', url: 'https://www.whiting-turner.com/' },
-  { id: 14, name: 'XL Construction', logo: '/images/sponsors/xl-construction.png', url: 'https://www.xlconstruction.com/' },
+  { id: 1, name: 'City of San Jose, Public Works Department', logo: 'sponsors/city-of-san-jose-public-works-department.png', url: 'https://www.sanjoseca.gov/your-government/departments-offices/public-works' },
+  { id: 2, name: 'DeSilva Gates Construction', logo: 'sponsors/desilva-gates-construction.png', url: 'https://desilvagates.com/' },
+  { id: 3, name: 'Graniterock', logo: 'sponsors/graniterock.png', url: 'https://www.graniterock.com/' },
+  { id: 4, name: 'Level 10 Construction', logo: 'sponsors/level-10-construction.png', url: 'https://www.level10gc.com/' },
+  { id: 5, name: 'McGuire and Hester', logo: 'sponsors/mcguire-and-hester.png', url: 'https://www.mcguireandhester.com/' },
+  { id: 6, name: 'Performance Contracting, Inc.', logo: 'sponsors/performance-contracting-inc.png', url: 'https://www.pcg.com/' },
+  { id: 7, name: 'Rodan Builders, Inc.', logo: 'sponsors/rodan-builders-inc.png', url: 'https://www.rodanbuilders.com/' },
+  { id: 8, name: 'Rudolph and Sletten, Inc.', logo: 'sponsors/rudolph-and-sletten-inc.png', url: 'https://www.rsconstruction.com/' },
+  { id: 9, name: 'Simpson Gumpertz & Heger', logo: 'sponsors/simpson-gumpertz-heger.png', url: 'https://www.sgh.com/' },
+  { id: 10, name: 'Technical Builders', logo: 'sponsors/technical-builders.png', url: 'https://www.tbibuild.com/' },
+  { id: 11, name: 'The CORE Group', logo: 'sponsors/the-core-group.png', url: 'https://www.coregroupus.com/' },
+  { id: 12, name: 'Vulcan Materials Company', logo: 'sponsors/vulcan-materials-company.png', url: 'https://www.vulcanmaterials.com/' },
+  { id: 13, name: 'Whiting-Turner', logo: 'sponsors/whiting-turner.png', url: 'https://www.whiting-turner.com/' },
+  { id: 14, name: 'XL Construction', logo: 'sponsors/xl-construction.png', url: 'https://www.xlconstruction.com/' },
   // Structural Companies
-  { id: 15, name: 'Kpff', logo: '/images/sponsors/kpff.png', url: 'https://www.kpff.com/' },
-  { id: 16, name: 'Mark Thomas', logo: '/images/sponsors/mark-thomas.png', url: 'https://www.markthomas.com/' },
-  { id: 17, name: 'PASE', logo: '/images/sponsors/pase.png', url: 'https://www.pase.com/' },
+  { id: 15, name: 'Kpff', logo: 'sponsors/kpff.png', url: 'https://www.kpff.com/' },
+  { id: 16, name: 'Mark Thomas', logo: 'sponsors/mark-thomas.png', url: 'https://www.markthomas.com/' },
+  { id: 17, name: 'PASE', logo: 'sponsors/pase.png', url: 'https://www.pase.com/' },
   // Environmental Companies
-  { id: 18, name: 'Schaaf & Wheeler Consulting Civil Engineers', logo: '/images/sponsors/schaaf-wheeler-consulting-civil-engineers.png', url: 'https://www.swsv.com/' },
+  { id: 18, name: 'Schaaf & Wheeler Consulting Civil Engineers', logo: 'sponsors/schaaf-wheeler-consulting-civil-engineers.png', url: 'https://www.swsv.com/' },
   // Transportation Companies
-  { id: 19, name: 'HMH Engineers', logo: '/images/sponsors/hmh-engineers.png', url: 'https://hmhca.com/' },
-  { id: 20, name: 'NTK Construction, Inc.', logo: '/images/sponsors/ntk-construction-inc.png', url: 'https://ntkconstruction.com/' },
+  { id: 19, name: 'HMH Engineers', logo: 'sponsors/hmh-engineers.png', url: 'https://hmhca.com/' },
+  { id: 20, name: 'NTK Construction, Inc.', logo: 'sponsors/ntk-construction-inc.png', url: 'https://ntkconstruction.com/' },
   // Land Development Companies
-  { id: 21, name: 'Carlson, Barbee & Gibson, Inc. (CBG)', logo: '/images/sponsors/carlson-barbee-gibson-inc-cbg.png', url: 'https://cbandg.com/' },
-  { id: 22, name: 'Civil Engineering Associates, Inc.', logo: '/images/sponsors/civil-engineering-associates-inc.png', url: 'https://www.civilengineeringassociates.com/' },
-  { id: 23, name: 'Ruggeri-Jensen-Azar', logo: '/images/sponsors/ruggeri-jensen-azar.png', url: 'https://www.rja-gps.com/' },
+  { id: 21, name: 'Carlson, Barbee & Gibson, Inc. (CBG)', logo: 'sponsors/carlson-barbee-gibson-inc-cbg.png', url: 'https://cbandg.com/' },
+  { id: 22, name: 'Civil Engineering Associates, Inc.', logo: 'sponsors/civil-engineering-associates-inc.png', url: 'https://www.civilengineeringassociates.com/' },
+  { id: 23, name: 'Ruggeri-Jensen-Azar', logo: 'sponsors/ruggeri-jensen-azar.png', url: 'https://www.rja-gps.com/' },
   // Utilities Companies
-  { id: 24, name: 'City of Palo Alto', logo: '/images/sponsors/city-of-palo-alto.png', url: 'https://www.cityofpaloalto.org/' },
+  { id: 24, name: 'City of Palo Alto', logo: 'sponsors/city-of-palo-alto.png', url: 'https://www.cityofpaloalto.org/' },
 ];
-
 
 // Enhanced sponsor grid display
 const SponsorGrid = ({ sponsors }: { sponsors: typeof SPONSORS }) => {  
-  // Function to handle image error
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>, name: string) => {
-    // Try SVG first, then fallback to PNG if SVG fails
-    if (e.currentTarget.src.endsWith('.png')) {
-      e.currentTarget.src = '/images/sponsors/company-placeholder.svg';
-    } else {
-      e.currentTarget.src = `/images/sponsors/${name}.png`;
-    }
-  };
+  // Removed unused handleImageError function
   
   return (
     <div className="py-8 bg-white">
@@ -62,12 +54,11 @@ const SponsorGrid = ({ sponsors }: { sponsors: typeof SPONSORS }) => {
             rel="noopener noreferrer"
             className="flex flex-col items-center bg-white rounded-lg p-6 hover:shadow-lg transition-shadow duration-300 border border-gray-200"
           >
-            <div className="h-24 flex items-center justify-center mb-4">
-              <img
-                src={sponsor.logo}
+            <div className="w-full flex items-center justify-center mb-4 p-2 min-h-[6rem]"> 
+              <R2Image
+                path={sponsor.logo}
                 alt={`${sponsor.name} logo`}
                 className="max-w-full max-h-full object-contain"
-                onError={(e) => handleImageError(e, sponsor.name)}
               />
             </div>
             <h3 className="text-center text-sm font-medium">{sponsor.name}</h3>
@@ -84,15 +75,7 @@ const SponsorSlider = ({ sponsors }: { sponsors: typeof SPONSORS }) => {
   const topRowSponsors = sponsors.slice(0, Math.ceil(sponsors.length / 2));
   const bottomRowSponsors = sponsors.slice(Math.ceil(sponsors.length / 2));
   
-  // Function to handle image error
-  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement>, name: string) => {
-    // Try SVG first, then fallback to PNG if SVG fails
-    if (e.currentTarget.src.endsWith('.png')) {
-      e.currentTarget.src = '/images/sponsors/company-placeholder.svg';
-    } else {
-      e.currentTarget.src = `/images/sponsors/${name}.png`;
-    }
-  };
+  // Removed unused handleImageError function
   
   return (
     <div className="py-16 bg-white">
@@ -114,17 +97,16 @@ const SponsorSlider = ({ sponsors }: { sponsors: typeof SPONSORS }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 key={`top-${sponsor.id}-${index}`}
-                className="flex-shrink-0 h-36 w-56 relative transform hover:scale-105 transition-transform duration-300"
+                className="flex-shrink-0 relative transform hover:scale-105 transition-transform duration-300"
               >
                 {/* Display logo or fallback to SVG placeholder */}
-                <div className="relative h-full w-full">
-                  <div className="relative h-full w-full bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md p-5 flex items-center justify-center transition-shadow duration-300">
-                    <div className="relative h-full w-full flex items-center justify-center">
-                      <img
-                        src={sponsor.logo}
+                <div className="relative w-full">
+                  <div className="relative bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md p-4 flex items-center justify-center transition-shadow duration-300 min-h-[7rem]"> 
+                    <div className="relative flex items-center justify-center p-1"> 
+                      <R2Image
+                        path={sponsor.logo}
                         alt={`${sponsor.name} logo`}
                         className="max-w-full max-h-full object-contain"
-                        onError={(e) => handleImageError(e, sponsor.name)}
                       />
                       <div className="absolute bottom-0 left-0 right-0 text-[10px] text-center text-gray-500 overflow-hidden text-ellipsis whitespace-nowrap px-2">
                         {sponsor.name}
@@ -156,17 +138,16 @@ const SponsorSlider = ({ sponsors }: { sponsors: typeof SPONSORS }) => {
                 target="_blank"
                 rel="noopener noreferrer"
                 key={`bottom-${sponsor.id}-${index}`}
-                className="flex-shrink-0 h-32 w-48 relative transform hover:scale-105 transition-transform duration-300"
+                className="flex-shrink-0 relative transform hover:scale-105 transition-transform duration-300"
               >
                 {/* Display logo or fallback to SVG placeholder */}
-                <div className="relative h-full w-full">
-                  <div className="relative h-full w-full bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md p-4 flex items-center justify-center transition-shadow duration-300">
-                    <div className="relative h-full w-full flex items-center justify-center">
-                      <img
-                        src={sponsor.logo}
+                <div className="relative w-full">
+                  <div className="relative bg-white border border-gray-200 rounded-lg shadow-sm hover:shadow-md p-4 flex items-center justify-center transition-shadow duration-300 min-h-[7rem]"> 
+                    <div className="relative flex items-center justify-center p-1"> 
+                      <R2Image
+                        path={sponsor.logo}
                         alt={`${sponsor.name} logo`}
                         className="max-w-full max-h-full object-contain"
-                        onError={(e) => handleImageError(e, sponsor.name)}
                       />
                       <div className="absolute bottom-0 left-0 right-0 text-[10px] text-center text-gray-500 overflow-hidden text-ellipsis whitespace-nowrap px-2">
                         {sponsor.name}

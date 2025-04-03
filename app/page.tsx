@@ -5,7 +5,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import FallbackImage from './components/FallbackImage';
 import PhotoGallery from './components/PhotoGallery';
-import { getFeaturedPhotos } from './utils/photoData';
+import { getFeaturedPhotos, getPhotosByCategory } from './utils/photoData';
+import R2Image from './components/R2Image';
 
 interface Officer {
   name: string;
@@ -176,21 +177,21 @@ export default function HomePage() {
       title: 'Concrete Canoe Competition',
       client: 'ASCE National Competition',
       tags: ['Design', 'Construction', 'Teamwork'],
-      image: '/images/projects/09-01-23/DSC00002.jpg',
+      image: 'projects/09-01-23/DSC00002.jpg',
       href: '/projects/concrete-canoe'
     },
     {
       title: 'Steel Bridge Competition',
       client: 'ASCE National Competition',
       tags: ['Structural', 'Design', 'Engineering'],
-      image: '/images/projects/09-01-23/Copy of DSC00016.jpg',
+      image: 'projects/09-01-23/Copy of DSC00016.jpg',
       href: '/projects/steel-bridge'
     },
     {
       title: 'Community Service Projects',
       client: 'Local Community',
       tags: ['Outreach', 'Sustainability', 'Service'],
-      image: '/images/projects/09-01-23/DSC00002.jpg',
+      image: 'projects/09-01-23/DSC00002.jpg',
       href: '/projects/community'
     }
   ], []);
@@ -382,20 +383,20 @@ export default function HomePage() {
       `}</style>
       
       {/* Hero Section - Modern ASCE Team Design */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section className="relative min-h-screen overflow-hidden">
         {/* Background image with ASCE team */}
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 via-blue-800/70 to-blue-900/80 z-10"></div>
-          <img 
-            src="/images/Photos/FGM Pics/possiblefrontpage.JPG"
+          <div className="absolute inset-0 bg-gradient-to-r from-blue-900/70 via-blue-800/60 to-blue-900/70 z-10"></div>
+          <R2Image 
+            path="FGM Pics/possiblefrontpage.JPG"
             alt="SJSU ASCE team members" 
             className="absolute inset-0 w-full h-full object-cover brightness-[0.85]"
           />
         </div>
         
         {/* Content container with improved layout */}
-        <div className="container mx-auto px-6 z-20 relative">
-          <div className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left md:justify-between">
+        <div className="px-6 py-32 z-20 relative">
+          <div className="flex flex-col items-center text-center md:flex-row md:items-start md:text-left md:justify-between max-w-7xl mx-auto">
             <div className="md:w-3/5 space-y-6">
               <div className="relative">
                 <h1 className="text-6xl sm:text-7xl md:text-8xl font-bold text-white leading-none tracking-wide drop-shadow-lg">
@@ -499,8 +500,8 @@ export default function HomePage() {
               </p>
               
               <div className="relative rounded-lg overflow-hidden shadow-md mt-8">
-                <img 
-                  src="/images/asce-membership.png" 
+                <R2Image 
+                  path="asce-membership.png"
                   alt="ASCE Membership Benefits" 
                   className="w-full h-auto" 
                   style={{ objectFit: 'cover' }}
@@ -521,8 +522,8 @@ export default function HomePage() {
             
             {/* Right column with team photo */}
             <div className="relative rounded-lg overflow-hidden shadow-md border border-gray-100">
-              <img 
-                src="/images/Photos/FGM Pics/generalmeeting.JPG" 
+              <R2Image 
+                path="FGM Pics/generalmeeting.JPG"
                 alt="SJSU ASCE Team" 
                 className="w-full h-full object-cover"
                 style={{ maxHeight: '450px' }}

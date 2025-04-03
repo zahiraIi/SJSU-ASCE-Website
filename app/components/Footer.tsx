@@ -3,6 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import R2Image from './R2Image';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin, FaYoutube } from 'react-icons/fa';
 
 export default function Footer() {
@@ -13,18 +14,17 @@ export default function Footer() {
         <div className="grid md:grid-cols-3 lg:grid-cols-4 gap-8 mb-12">
           {/* Logo and about */}
           <div className="col-span-1">
-            <Link href="/" className="inline-block mb-4 flex items-center">
-              <div className="relative w-16 h-16 mr-3">
-                <Image 
-                  src="/images/ASCELOGO/ASCE.png"
+            <Link href="/" className="flex items-center mb-4">
+              <div className="w-16 h-16 flex items-center justify-center">
+                <R2Image 
+                  path="ASCELOGO/ASCE.png"
                   alt="SJSU ASCE Logo" 
-                  fill
-                  sizes="64px"
-                  style={{ objectFit: 'contain' }}
-                  className="brightness-0 invert"
+                  width={64}
+                  height={64}
+                  className="brightness-0 invert object-contain"
                 />
               </div>
-              <h2 className="text-2xl font-display font-bold text-white">SJSU ASCE</h2>
+              <span className="text-2xl font-display font-bold text-white ml-3 flex items-center">SJSU ASCE</span>
             </Link>
             <p className="text-gray-400 mb-6">
               American Society of Civil Engineers at San Jose State University - Building the future of civil engineering since 1921.

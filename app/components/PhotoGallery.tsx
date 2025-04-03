@@ -1,8 +1,10 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import Image from 'next/image';
+// Removed standard Image import
+// import Image from 'next/image';
 import { HiChevronLeft, HiChevronRight } from 'react-icons/hi';
+import R2Image from './R2Image'; // Import R2Image
 
 interface Photo {
   src: string;
@@ -226,12 +228,9 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({
               }`}
               style={{ zIndex: 20 }}
             >
-              <Image
-                src={displayPhotos[currentIndex].src}
+              <R2Image
+                path={displayPhotos[currentIndex].src}
                 alt={displayPhotos[currentIndex].alt}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                priority={true}
                 className="object-cover w-full h-full"
               />
             </div>
@@ -243,11 +242,9 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({
               className="absolute inset-0 photo-gallery-slide-out-left"
               style={{ zIndex: 10 }}
             >
-              <Image
-                src={displayPhotos[previousIndex].src}
+              <R2Image
+                path={displayPhotos[previousIndex].src}
                 alt={displayPhotos[previousIndex].alt}
-                fill
-                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 className="object-cover w-full h-full"
               />
             </div>
@@ -257,12 +254,9 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({
           {adjacentIndices.map((index) => (
             displayPhotos.length > index && (
               <div key={`preload-${index}`} className="hidden">
-                <Image
-                  src={displayPhotos[index].src}
+                <R2Image
+                  path={displayPhotos[index].src}
                   alt={`Preload ${displayPhotos[index].alt}`}
-                  width={1}
-                  height={1}
-                  priority={false}
                 />
               </div>
             )
