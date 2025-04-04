@@ -184,7 +184,7 @@ export default function ContactPage() {
             <R2Image 
               path="ASCELOGO/ASCE.png"
               alt="SJSU ASCE Logo" 
-              className="h-20 w-auto"
+              className="h-12 md:h-20 w-auto"
               height={80}
             />
           </motion.div>
