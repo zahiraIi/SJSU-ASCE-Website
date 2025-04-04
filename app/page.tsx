@@ -501,9 +501,6 @@ export default function HomePage() {
                 className="w-full h-full object-cover"
                 style={{ maxHeight: '450px' }}
               />
-              <div className="absolute bottom-0 left-0 right-0 bg-primary bg-opacity-80 text-white p-3 text-center">
-                <p className="font-medium">Join our community of passionate civil engineering students!</p>
-              </div>
             </div>
           </div>
           
