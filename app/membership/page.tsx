@@ -26,7 +26,6 @@ export default function MembershipPage() {
         
         {/* What you can get section - matching the image style */}
         <div className="max-w-6xl mx-auto mb-16 bg-white rounded-lg shadow-lg overflow-hidden">
-          <div className="p-2 bg-sjsu-gradient"></div>
           <div className="p-8 md:p-12">
             <h2 className="text-2xl font-bold mb-6">What you can get with ASCE membership</h2>
             
