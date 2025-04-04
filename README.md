@@ -1,8 +1,8 @@
 # SJSU ASCE Website
 
 <div align="center">
-  <a href="https://www.sjsuasce.com">
-    <img src="https://github.com/sjsuasce/website/assets/readme/team-photo.jpg" alt="SJSU ASCE Team" width="700">
+  <a href="https://sjsu-asce-website.vercel.app">
+    <img src="https://r2.sjsuasce.com/FGM%20Pics/possiblefrontpage.JPG" alt="SJSU ASCE Team" width="700">
   </a>
   <p><em>Building the future of civil engineering through innovation, collaboration, and leadership</em></p>
 </div>
@@ -10,18 +10,21 @@
 This is the official website for the American Society of Civil Engineers (ASCE) chapter at San Jose State University. The website showcases our organization, events, projects, and provides resources for students interested in civil engineering.
 
 <div align="center">
-  <a href="https://www.sjsuasce.com">
+  <a href="https://sjsu-asce-website.vercel.app">
     <img src="https://img.shields.io/badge/Visit-Live%20Website-blue?style=for-the-badge&logo=globe" alt="View Live Website">
   </a>
 </div>
 
+<!-- The image below is commented out until a proper screenshot is uploaded to R2 storage -->
+<!--
 <br>
 
 <div align="center">
-  <a href="https://www.sjsuasce.com">
-    <img src="https://github.com/sjsuasce/website/assets/readme/website-screenshot.jpg" alt="SJSU ASCE Website Screenshot" width="800">
+  <a href="https://sjsu-asce-website.vercel.app">
+    <img src="https://r2.sjsuasce.com/website-screenshot.jpg" alt="SJSU ASCE Website Screenshot" width="800">
   </a>
 </div>
+-->
 
 ## 📌 Table of Contents
 - [🧑‍💼 For Website Administrators](#-for-website-administrators)

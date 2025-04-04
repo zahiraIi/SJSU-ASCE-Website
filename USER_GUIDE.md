@@ -101,6 +101,7 @@ If you have trouble with any of these tasks, or need additional help:
 - **Email**: Contact the website administrator at [web@sjsuasce.com](mailto:web@sjsuasce.com)
 - **Meeting**: Schedule a quick call or meeting for a walkthrough
 - **Documentation**: Refer to the full README.md file in the project repository
+- **Website**: Visit our website at [https://sjsu-asce-website.vercel.app](https://sjsu-asce-website.vercel.app)
 
 ---
 
