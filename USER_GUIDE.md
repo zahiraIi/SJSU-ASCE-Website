@@ -1,7 +1,8 @@
 # SJSU ASCE Website: User Guide
 
 <div align="center">
-  <img src="./assets/readme/logo.png" alt="SJSU ASCE Logo" width="200">
+  <h1>SJSU ASCE</h1>
+  <p>San Jose State University American Society of Civil Engineers</p>
 </div>
 
 ## Introduction

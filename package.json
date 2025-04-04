@@ -19,8 +19,7 @@
     "watch-photos": "node scripts/watch-photos.js",
     "r2-worker": "npx wrangler dev r2-worker.js --local",
     "dev:with-r2": "concurrently \"npm run dev\" \"npm run r2-worker\"",
-    "wrangler-login": "npx wrangler login",
-    "update-readme-assets": "node scripts/update-readme-assets.js"
+    "wrangler-login": "npx wrangler login"
   },
   "keywords": [],
   "author": "",
@@ -71,8 +70,7 @@
       "fetch-companies-simple": "Updates sponsors with hardcoded company data from the spreadsheet (more reliable option)",
       "fetch-companies-enhanced": "Focuses on specific companies (like PASE, Mark Thomas, KPFF) to find better logos using multiple search techniques and manual sources",
       "process-photos": "Processes all photos in one command - converts HEIC to JPG, deletes originals, and optimizes all images in place",
-      "watch-photos": "Watches the photos directory and automatically processes new/changed images",
-      "update-readme-assets": "Downloads images from R2 bucket and stores them locally for GitHub README display"
+      "watch-photos": "Watches the photos directory and automatically processes new/changed images"
     }
   }
 }

@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="https://sjsu-asce-website.vercel.app">
-    <img src="./assets/readme/team-photo.jpg" alt="SJSU ASCE Team" width="700">
+    <img src="public/possiblefrontpage.JPG" alt="SJSU ASCE Team" width="700">
   </a>
   <p><em>Building the future of civil engineering through innovation, collaboration, and leadership</em></p>
 </div>
