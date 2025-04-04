@@ -1,0 +1,16 @@
+UNNECESSARY FILES TO DELETE:
+
+1. Debug and Test Files:
+   - app/r2debugger/ (entire directory)
+   - app/image-debug/ (entire directory)
+   - app/b2-direct/ (entire directory)
+   - pages/b2-direct/ (entire directory)
+
+2. Temporary or Generated Files:
+   - .wrangler/tmp/ (entire directory)
+   - .wrangler/state/ (entire directory)
+
+3. Duplicate or Obsolete Documentation:
+   - If any documentation in the docs/ directory is redundant after updating the main README
+
+NOTE: Before deleting any files, ensure they're not being referenced elsewhere in the codebase. 

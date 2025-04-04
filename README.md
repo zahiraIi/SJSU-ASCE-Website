@@ -1,250 +1,193 @@
 # SJSU ASCE Website
 
-This is the official website for the American Society of Civil Engineers (ASCE) chapter at San Jose State University.
+<div align="center">
+  <img src="https://r2.sjsuasce.com/FGM%20Pics/possiblefrontpage.JPG" alt="SJSU ASCE Team" width="700">
+  <p><em>Building the future of civil engineering through innovation, collaboration, and leadership</em></p>
+</div>
 
-## Getting Started
+This is the official website for the American Society of Civil Engineers (ASCE) chapter at San Jose State University. The website showcases our organization, events, projects, and provides resources for students interested in civil engineering.
 
-First, install the dependencies:
+[View Live Website](https://www.sjsuasce.com)
+
+![SJSU ASCE Website Screenshot](https://r2.sjsuasce.com/website-screenshot.jpg)
+
+## 📌 Table of Contents
+- [For Website Administrators](#for-website-administrators)
+  - [Updating Photos](#updating-photos)
+  - [Managing the Calendar](#managing-the-calendar)
+  - [Contact Form Information](#contact-form-information)
+- [For Developers](#for-developers)
+  - [Getting Started](#getting-started)
+  - [Project Structure](#project-structure)
+  - [Technologies Used](#technologies-used)
+  - [Deployment](#deployment)
+
+---
+
+## For Website Administrators
+
+This section provides instructions for non-technical users who need to update content on the website.
+
+### Updating Photos
+
+The website uses Cloudflare R2 Cloud Storage for storing and serving images. To update photos:
+
+#### Option 1: Through the Cloudflare R2 Web Interface (Recommended for non-technical users)
+
+1. **Log in to the Cloudflare R2 account**:
+   - Go to [Cloudflare Dashboard](https://dash.cloudflare.com/)
+   - Use the ASCE account credentials (contact the webmaster if you don't have access)
+
+2. **Navigate to the bucket**:
+   - Click on "R2" in the left sidebar
+   - Select the "ascewebsiteimages" bucket
+
+3. **Upload new images**:
+   - Click the "Upload" button
+   - Select files from your computer
+   - Maintain the folder structure when uploading:
+     - Event photos go in: `FGM Pics/` or appropriate event folder
+     - Officer photos go in: `officers/`
+     - General photos go in: `photos/`
+
+4. **Important notes**:
+   - Image files should be in JPG or PNG format
+   - Keep filenames simple without special characters
+   - Optimize images before uploading (aim for less than 1MB per image)
+   - Images will appear on the website shortly after uploading
+
+### Managing the Calendar
+
+The website displays events from a Google Calendar. To update events:
+
+1. **Access the Google Calendar**:
+   - Go to [Google Calendar](https://calendar.google.com)
+   - Sign in with the SJSU ASCE account credentials
+
+2. **Add or edit events**:
+   - Click on the date for a new event, or click an existing event to edit
+   - Fill in the event details:
+     - Title: Clear, concise name of the event
+     - Date and time: When the event will occur
+     - Location: Physical location or Zoom link
+     - Description: Add details about the event
+
+3. **Categorize your event** (important for website display):
+   - In the event description, add a line: `Category: [CATEGORY_NAME]`
+   - Example: `Category: Workshops & Training`
+   - Available categories:
+     - Workshops & Training
+     - Competitions
+     - Networking Events
+     - General
+
+4. **Add an image** (optional):
+   - In the event description, add a line: `ImagePath: path/to/image.jpg`
+   - Example: `ImagePath: events/workshop_spring_2023.jpg`
+   - Make sure the image is uploaded to Cloudflare R2 first
+
+5. **Changes will be reflected on the website automatically** (might take a few minutes)
+
+### Contact Form Information
+
+When visitors submit the contact form, their information is stored in a database. To access this information:
+
+1. **Check the contact submissions**:
+   - Contact form submissions are forwarded to the SJSU ASCE email account
+   - Sign in to your ASCE Gmail account to view submissions
+   - Submissions will have the subject line "New Contact Form Submission"
+
+2. **Export submissions** (if needed):
+   - For a record of all submissions, contact the website administrator
+   - Data can be exported to Excel/CSV format upon request
+
+---
+
+## For Developers
+
+This section is for technical users who need to maintain or extend the website codebase.
+
+### Getting Started
 
 ```bash
+# Clone the repository
+git clone https://github.com/sjsuasce/website.git
+
+# Install dependencies
 npm install
-```
 
-Then, run the development server:
+# Set up environment variables
+cp .env.example .env.local
+# Edit .env.local with your credentials
 
-```bash
+# Run the development server
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to see the result.
 
-## Scripts
-
-The following scripts are available:
-
-- `npm run dev`: Starts the development server
-- `npm run build`: Builds the app for production
-- `npm run start`: Runs the built app in production mode
-- `npm run lint`: Runs ESLint to check for code issues
-- `npm run download-logos`: Downloads logos for sponsors from their websites
-- `npm run create-placeholders`: Creates placeholder SVGs for sponsors without logos
-- `npm run fetch-companies`: Attempts to fetch company data from Google Sheet and updates sponsors data (requires proper Google API setup)
-- `npm run fetch-companies-simple`: Updates sponsors with hardcoded company data from the spreadsheet (more reliable option)
-- `npm run fetch-companies-enhanced`: Focuses on finding logos for specific companies with missing logos using advanced search techniques
-
-## Sponsor Management
-
-The website includes a sponsors page that displays company logos in both a scrolling animation and a grid layout. To update the sponsors:
-
-1. Use `npm run fetch-companies-simple` to update the sponsors with the latest company information.
-2. This will automatically download logos using the Clearbit Logo API and create placeholder images for companies that don't have logos available.
-3. The script will then update the sponsors data in `app/sponsors/page.tsx` with the refreshed information.
-
-For specific companies with missing logos, you can use the enhanced script:
-
-1. Use `npm run fetch-companies-enhanced` to target specific companies that need better logos.
-2. This script employs multiple advanced logo search strategies:
-   - Checks manual curated logo URLs first for higher quality logos
-   - Uses the Clearbit Logo API with company domains and name variations
-   - Searches for regional terms (San Jose, Bay Area, etc.) to find appropriate logos
-   - Attempts to find logos by directly scraping company websites
-   - Creates custom placeholders when no logo can be found
-3. The script has special handling for specific companies like PASE, Graniterock, Technical Builders, Whiting-Turner, and XL Construction.
-4. To add more companies to target, edit the `targetCompanies` array in `scripts/fetch-companies-enhanced.js`.
-
-## Google Calendar Integration
-
-To set up the Google Calendar integration for displaying events:
-
-1. Follow the instructions in `docs/GOOGLE_CALENDAR_SETUP.md`
-2. Create a Google Calendar and make it public
-3. Set up a Google Cloud Project and enable the Google Calendar API
-4. Generate an API key
-5. Update the `.env.local` file with your Calendar ID and API key:
+### Project Structure
 
 ```
-NEXT_PUBLIC_GOOGLE_CALENDAR_ID=your-calendar-id@group.calendar.google.com
-NEXT_PUBLIC_GOOGLE_CALENDAR_API_KEY=your-api-key
+/app                        # Next.js app directory (main application code)
+  /api                      # API routes
+    /contact                # Contact form API endpoint
+    /events                 # Events API routes
+  /components               # Reusable components
+    /Layout                 # Layout components (header, footer, etc.)
+    /ui                     # UI components (buttons, cards, etc.)
+    /R2Image.tsx            # Cloudflare R2 image component
+    /FallbackImage.tsx      # Fallback image component
+    /PhotoGallery.tsx       # Photo gallery component
+    /UpcomingEvents.tsx     # Upcoming events component
+  /about                    # About page
+  /contact                  # Contact page
+  /events                   # Events page
+  /gallery                  # Gallery page
+  /membership               # Membership page
+  /officers                 # Officers page
+  /sponsors                 # Sponsors page
+  /hooks                    # Custom React hooks
+  /utils                    # Utility functions
+    /googleCalendar.ts      # Google Calendar integration
+    /imageUtils.ts          # Image utility functions
+    /photoData.ts           # Photo data functions
+  /page.tsx                 # Homepage
+  /layout.tsx               # Root layout
+  /globals.css              # Global CSS styles
+/docs                       # Documentation
+  /GOOGLE_CALENDAR_SETUP.md # Google Calendar setup guide
+  /CLOUDFLARE_R2_STORAGE.md # Cloudflare R2 storage guide
+/public                     # Static assets
+/scripts                    # Utility scripts for maintenance tasks
+/types                      # TypeScript type definitions
+/next.config.js             # Next.js configuration
+/tailwind.config.js         # Tailwind CSS configuration
+/r2-worker.js               # Cloudflare R2 worker script
+/wrangler.toml              # Wrangler configuration for Cloudflare
 ```
 
-Without proper configuration, the website will display sample placeholder events.
+### Technologies Used
 
-## Google Drive Image Integration
+- **Frontend**: Next.js, React, TypeScript, Tailwind CSS
+- **Image Storage**: Cloudflare R2
+- **Calendar Integration**: Google Calendar API
+- **Deployment**: Vercel
 
-The website uses Google Drive to host images instead of storing them in the repository. This keeps the Git repository small while maintaining the same file path references in the code.
+### Deployment
 
-**How it works:**
-1. Images are stored in a Google Drive folder
-2. Components reference images with standard paths (e.g., `/images/photos/event.jpg`)
-3. The `imageUtils.ts` utility maps these paths to Google Drive file IDs
-4. Images are served directly from Google Drive
+The site is automatically deployed through Vercel when changes are pushed to the main branch. Manual deployments can be triggered from the Vercel dashboard.
 
-For detailed setup and usage instructions, see [Google Drive Images Documentation](docs/GOOGLE_DRIVE_IMAGES.md).
+For detailed development documentation, please refer to the files in the `/docs` directory:
+- [Google Calendar Setup](docs/GOOGLE_CALENDAR_SETUP.md)
+- [Cloudflare R2 Storage](docs/CLOUDFLARE_R2_STORAGE.md)
 
-To test the image loading system, visit `/image-test` in the running application.
-
-## Backblaze B2 Image Integration
-
-This project uses Backblaze B2 Cloud Storage for hosting images, with multiple methods of integration to ensure reliable image loading.
-
-### Configuration
-
-The B2 integration is configured with these environment variables, which can be set in your `.env.local` file:
-
-```
-NEXT_PUBLIC_USE_B2_STORAGE=true
-NEXT_PUBLIC_B2_BUCKET_NAME=ascewebsiteimages
-NEXT_PUBLIC_B2_KEY_ID=your_key_id
-NEXT_PUBLIC_B2_APPLICATION_KEY=your_application_key
-```
-
-### How It Works
-
-We've implemented two approaches to ensure reliable image loading:
-
-1. **API Route Method (Recommended)**: Uses a server-side API route to proxy image requests, handling authentication and ensuring proper content types. This method provides the most reliable experience.
-
-2. **Direct URL Method**: As a fallback, direct URLs to the B2 bucket can be used for simple public access.
-
-### Using the BackblazeImage Component
-
-```jsx
-import BackblazeImage from '@/components/BackblazeImage';
-
-<BackblazeImage 
-  path="path/to/image.jpg" 
-  alt="Description of image" 
-  width={500} 
-  height={300} 
-/>
-```
-
-### Troubleshooting
-
-If images fail to load:
-
-1. **Check Bucket Permissions**: Ensure your B2 bucket is set to "Public"
-2. **CORS Configuration**: Add proper CORS rules to your bucket
-3. **Content Types**: Make sure your images have proper content types when uploaded
-
-### CORS Configuration
-
-Use this CORS configuration in your Backblaze B2 bucket:
-
-```json
-{
-  "corsRules": [
-    {
-      "corsRuleName": "allow-web-access",
-      "allowedOrigins": ["*"],
-      "allowedOperations": ["s3_head", "s3_get", "b2_download_file_by_id", "b2_download_file_by_name"],
-      "allowedHeaders": ["*"],
-      "maxAgeSeconds": 3600
-    }
-  ]
-}
-```
-
-To set this using the B2 CLI:
-
-```bash
-b2 bucket update --corsRule '{
-  "corsRuleName": "allow-web-access",
-  "allowedOrigins": ["*"], 
-  "allowedOperations": ["s3_head", "s3_get", "b2_download_file_by_id", "b2_download_file_by_name"], 
-  "allowedHeaders": ["*"], 
-  "maxAgeSeconds": 3600
-}' ascewebsiteimages allPublic
-```
-
-## Features
-
-- **Modern Design**: Built with Next.js and TailwindCSS
-- **Responsive Layout**: Optimized for all device sizes
-- **Image Hosting**: Images stored on Backblaze B2 for reliable delivery
-- **Google Calendar Integration**: Display upcoming events from the ASCE calendar
-- Responsive design for all screen sizes
-- Dynamic homepage with services and project showcases
-- Sponsors page with scrolling animation and grid display
-- Membership information with direct application link
-- Competitions and activities showcase
-- Projects showcase
-- Contact form
-
-## Configuration
-
-This project uses environment variables for configuration. Create a `.env.local` file in the root directory with the following variables:
-
-```
-# Backblaze B2 Configuration
-NEXT_PUBLIC_USE_B2_STORAGE=true
-NEXT_PUBLIC_B2_BUCKET_URL=https://f004.backblazeb2.com/b2api/v1/b2_download_file_by_id?fileId=
-
-# Google Calendar Configuration
-GOOGLE_CALENDAR_API_KEY=your_api_key_here
-GOOGLE_CALENDAR_ID=your_calendar_id_here
-```
-
-## Image Handling
-
-Images are stored in Backblaze B2 Cloud Storage for reliable delivery with proper content-type headers. See [Backblaze B2 Images Documentation](./docs/BACKBLAZE_B2_IMAGES.md) for details on usage and implementation.
-
-## Development
-
-1. Clone the repository
-2. Install dependencies with `npm install`
-3. Set up your environment variables in `.env.local`
-4. Run the development server with `npm run dev`
-
-## Deployment
-
-This site can be deployed to any platform that supports Next.js, such as Vercel or Netlify.
-
-1. Connect your repository to your hosting platform
-2. Configure the environment variables in your hosting platform's dashboard
-3. Deploy the site
+---
 
 ## License
 
 [MIT](LICENSE)
 
-## Built With
+## Contact
 
-- [Next.js](https://nextjs.org/) - The React framework
-- [React](https://reactjs.org/) - Frontend library
-- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
-- [TypeScript](https://www.typescriptlang.org/) - JavaScript with syntax for types 
-
-## Running with Cloudflare R2 Storage via Wrangler
-
-To serve images from your Cloudflare R2 bucket during local development:
-
-1. **Authenticate with Cloudflare** (only need to do this once):
-   ```bash
-   npm run wrangler-login
-   ```
-   This will open a browser window to authorize Wrangler to access your Cloudflare account.
-
-2. **Start the development environment with R2 worker**:
-   ```bash
-   npm run dev:with-r2
-   ```
-   This will start both the Next.js development server and the Wrangler worker that serves content from your R2 bucket.
-
-3. **Test the R2 worker**:
-   Visit http://localhost:3000/r2-worker-test to verify that the Wrangler worker is correctly serving content from your R2 bucket.
-
-4. **If you encounter issues**:
-   - Check that your `.env.local` file has the correct R2 credentials
-   - Verify that your `wrangler.toml` has the correct account ID and bucket name
-   - Make sure you've authenticated with Cloudflare
-   - Look at the terminal output from Wrangler for any error messages
-
-### Running Just the Wrangler Worker
-
-If you want to run only the Wrangler worker for testing:
-```bash
-npm run r2-worker
-```
-
-This will start the worker on http://localhost:8787. You can access files directly at http://localhost:8787/path/to/file.jpg. 
+For questions or support regarding the website, please contact the SJSU ASCE webmaster at [web@sjsuasce.com](mailto:web@sjsuasce.com). 
