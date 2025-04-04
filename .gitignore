@@ -61,6 +61,7 @@ next-env.d.ts
 !/public/images/SJSUSPARTANLOGO/*.png
 !/public/images/static/*.png
 !/public/images/static/*.jpg
+!/public/possiblefrontpage.JPG
 
 # backup files
 /backup/

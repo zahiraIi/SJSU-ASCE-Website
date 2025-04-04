@@ -15,15 +15,6 @@ This is the official website for the American Society of Civil Engineers (ASCE) 
   </a>
 </div>
 
-<!-- Website Screenshot -->
-<br>
-
-<div align="center">
-  <a href="https://sjsu-asce-website.vercel.app">
-    <img src="./assets/readme/website-screenshot.jpg" alt="SJSU ASCE Website Screenshot" width="800">
-  </a>
-</div>
-
 ## 📌 Table of Contents
 - [🧑‍💼 For Website Administrators](#-for-website-administrators)
   - [📸 Updating Photos](#-updating-photos)
