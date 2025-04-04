@@ -137,7 +137,7 @@ export default function Navbar() {
       <div className="container mx-auto flex items-center justify-between px-4">
         {/* Logo */}
         <Link href="/" className="flex items-center group py-1">
-          <div className={`relative ${isScrolled ? 'h-6 md:h-8 md:w-20' : 'h-8 md:h-12 md:w-24'} mr-2 transition-all duration-200`}>
+          <div className={`relative ${isScrolled ? 'h-6 w-16 md:h-8 md:w-20' : 'h-8 w-20 md:h-12 md:w-24'} mr-2 transition-all duration-200`}>
             <R2Image
               path="ASCELOGO/ASCE.png"
               alt="SJSU ASCE Logo"
