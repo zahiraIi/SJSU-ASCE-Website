@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="https://sjsu-asce-website.vercel.app">
-    <img src="https://r2.sjsuasce.com/FGM%20Pics/possiblefrontpage.JPG" alt="SJSU ASCE Team" width="700">
+    <img src="./assets/readme/team-photo.jpg" alt="SJSU ASCE Team" width="700">
   </a>
   <p><em>Building the future of civil engineering through innovation, collaboration, and leadership</em></p>
 </div>
@@ -15,16 +15,14 @@ This is the official website for the American Society of Civil Engineers (ASCE) 
   </a>
 </div>
 
-<!-- The image below is commented out until a proper screenshot is uploaded to R2 storage -->
-<!--
+<!-- Website Screenshot -->
 <br>
 
 <div align="center">
   <a href="https://sjsu-asce-website.vercel.app">
-    <img src="https://r2.sjsuasce.com/website-screenshot.jpg" alt="SJSU ASCE Website Screenshot" width="800">
+    <img src="./assets/readme/website-screenshot.jpg" alt="SJSU ASCE Website Screenshot" width="800">
   </a>
 </div>
--->
 
 ## 📌 Table of Contents
 - [🧑‍💼 For Website Administrators](#-for-website-administrators)
@@ -66,6 +64,7 @@ The website uses Cloudflare R2 Cloud Storage for storing and serving images. To 
      - General photos go in: `photos/`
 
 4. **Important notes**:
+   - DO NOT EXCEED THE 10GB SPACE IN THE FOLDER (OR ELSE WILL BE CHARGED MONEY --> DELETE OLD FILES IF NECCESARY)
    - 📝 Image files should be in JPG or PNG format
    - 📊 Keep file sizes under 1MB (compress large images before uploading)
    - 🏷️ Use simple file names without spaces or special characters

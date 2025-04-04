@@ -1,0 +1,49 @@
+name: Update README Assets
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'README.md'
+      - '.github/workflows/update-readme-assets.yml'
+      - 'scripts/update-readme-assets.js'
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  update-assets:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Install screenshot-website
+        run: npm install -g screenshot-website
+      
+      - name: Update README assets
+        run: npm run update-readme-assets
+      
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions'
+          git config --global user.email 'github-actions@github.com'
+          git add assets/
+          git add README.md
+          git add USER_GUIDE.md
+          
+          # Only commit if there are changes
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update README assets"
+            git push
+          fi 

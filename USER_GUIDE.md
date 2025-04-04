@@ -1,7 +1,7 @@
 # SJSU ASCE Website: User Guide
 
 <div align="center">
-  <img src="https://r2.sjsuasce.com/ASCELOGO/ASCE.png" alt="SJSU ASCE Logo" width="200">
+  <img src="./assets/readme/logo.png" alt="SJSU ASCE Logo" width="200">
 </div>
 
 ## Introduction
