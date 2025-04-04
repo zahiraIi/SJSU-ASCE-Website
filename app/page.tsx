@@ -459,7 +459,6 @@ export default function HomePage() {
           <div className="text-center mb-12">
             <h5 className="text-primary uppercase tracking-wider font-medium mb-2">WHAT WE OFFER</h5>
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6">What you can get with ASCE membership</h2>
-            <div className="w-24 h-1 bg-primary mx-auto mb-8"></div>
           </div>
           
           <div className="grid md:grid-cols-2 gap-10 mb-10">
