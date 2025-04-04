@@ -179,7 +179,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
-            className="mb-4"
+            className="hidden md:block mb-4"
           >
             <R2Image 
               path="ASCELOGO/ASCE.png"
