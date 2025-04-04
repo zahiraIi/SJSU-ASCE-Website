@@ -7,6 +7,7 @@ import FallbackImage from './components/FallbackImage';
 import PhotoGallery from './components/PhotoGallery';
 import { getFeaturedPhotos, getPhotosByCategory } from './utils/photoData';
 import R2Image from './components/R2Image';
+import UpcomingEvents from './components/UpcomingEvents';
 
 interface Officer {
   name: string;
@@ -445,37 +446,7 @@ export default function HomePage() {
             
             <div className="mt-12 md:mt-0 w-full md:w-2/5 flex justify-center md:justify-end">
               <div className="flex flex-col w-full max-w-md">
-                <div className="glass-card rounded-lg p-6 sm:p-8 shadow-xl">
-                  <h3 className="text-white font-bold text-lg sm:text-xl mb-3 flex items-center">
-                    <svg className="w-5 h-5 mr-2 text-blue-300" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
-                    </svg>
-                    Upcoming Events
-                  </h3>
-                  <ul className="space-y-4">
-                    <li className="text-white/80 p-2 rounded">
-                      <span className="block text-sm font-medium text-blue-300">APR 20</span>
-                      <span className="block">PSWC Competition Prep</span>
-                    </li>
-                    <li className="text-white/80 p-2 rounded">
-                      <span className="block text-sm font-medium text-blue-300">MAY 5</span>
-                      <span className="block">Industry Night Mixer</span>
-                    </li>
-                    <li className="text-white/80 p-2 rounded">
-                      <span className="block text-sm font-medium text-blue-300">MAY 15</span>
-                      <span className="block">End of Year Celebration</span>
-                    </li>
-                  </ul>
-                  <a 
-                    href="/events" 
-                    className="inline-flex items-center text-sm text-blue-300 hover:text-blue-200 mt-4"
-                  >
-                    View all events
-                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                  </a>
-                </div>
+                <UpcomingEvents />
               </div>
             </div>
           </div>
