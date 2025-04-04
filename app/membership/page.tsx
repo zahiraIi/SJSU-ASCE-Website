@@ -21,7 +21,6 @@ export default function MembershipPage() {
         <div className="text-center mb-12">
           <h5 className="text-primary uppercase tracking-wider font-medium mb-2">SJSU ASCE</h5>
           <h1 className="section-title">Become a Member</h1>
-          <div className="w-24 h-1 bg-primary mx-auto mb-6"></div>
         </div>
         
         {/* What you can get section - matching the image style */}
