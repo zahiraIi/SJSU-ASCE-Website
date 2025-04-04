@@ -1,113 +1,125 @@
 # SJSU ASCE Website
 
 <div align="center">
-  <img src="https://r2.sjsuasce.com/FGM%20Pics/possiblefrontpage.JPG" alt="SJSU ASCE Team" width="700">
+  <a href="https://www.sjsuasce.com">
+    <img src="https://github.com/sjsuasce/website/assets/readme/team-photo.jpg" alt="SJSU ASCE Team" width="700">
+  </a>
   <p><em>Building the future of civil engineering through innovation, collaboration, and leadership</em></p>
 </div>
 
 This is the official website for the American Society of Civil Engineers (ASCE) chapter at San Jose State University. The website showcases our organization, events, projects, and provides resources for students interested in civil engineering.
 
-[View Live Website](https://www.sjsuasce.com)
+<div align="center">
+  <a href="https://www.sjsuasce.com">
+    <img src="https://img.shields.io/badge/Visit-Live%20Website-blue?style=for-the-badge&logo=globe" alt="View Live Website">
+  </a>
+</div>
 
-![SJSU ASCE Website Screenshot](https://r2.sjsuasce.com/website-screenshot.jpg)
+<br>
+
+<div align="center">
+  <a href="https://www.sjsuasce.com">
+    <img src="https://github.com/sjsuasce/website/assets/readme/website-screenshot.jpg" alt="SJSU ASCE Website Screenshot" width="800">
+  </a>
+</div>
 
 ## 📌 Table of Contents
-- [For Website Administrators](#for-website-administrators)
-  - [Updating Photos](#updating-photos)
-  - [Managing the Calendar](#managing-the-calendar)
-  - [Contact Form Information](#contact-form-information)
-- [For Developers](#for-developers)
-  - [Getting Started](#getting-started)
-  - [Project Structure](#project-structure)
-  - [Technologies Used](#technologies-used)
-  - [Deployment](#deployment)
+- [🧑‍💼 For Website Administrators](#-for-website-administrators)
+  - [📸 Updating Photos](#-updating-photos)
+  - [📅 Managing the Calendar](#-managing-the-calendar)
+  - [📨 Contact Form Information](#-contact-form-information)
+- [👩‍💻 For Developers](#-for-developers)
+  - [🚀 Getting Started](#-getting-started)
+  - [🏗️ Project Structure](#-project-structure)
+  - [⚙️ Technologies Used](#-technologies-used)
+  - [🚢 Deployment](#-deployment)
 
 ---
 
-## For Website Administrators
+## 🧑‍💼 For Website Administrators
 
 This section provides instructions for non-technical users who need to update content on the website.
 
-### Updating Photos
+### 📸 Updating Photos
 
 The website uses Cloudflare R2 Cloud Storage for storing and serving images. To update photos:
 
-#### Option 1: Through the Cloudflare R2 Web Interface (Recommended for non-technical users)
+#### ✨ Through the Cloudflare R2 Web Interface (Recommended for non-technical users)
 
 1. **Log in to the Cloudflare R2 account**:
-   - Go to [Cloudflare Dashboard](https://dash.cloudflare.com/)
-   - Use the ASCE account credentials (contact the webmaster if you don't have access)
+   - 🔐 Go to [Cloudflare Dashboard](https://dash.cloudflare.com/)
+   - 🔑 Use the ASCE account credentials (contact the webmaster if you don't have access)
 
 2. **Navigate to the bucket**:
-   - Click on "R2" in the left sidebar
-   - Select the "ascewebsiteimages" bucket
+   - 📁 Click on "R2" in the left sidebar
+   - 🗂️ Select the "ascewebsiteimages" bucket
 
 3. **Upload new images**:
-   - Click the "Upload" button
-   - Select files from your computer
-   - Maintain the folder structure when uploading:
+   - ⬆️ Click the "Upload" button
+   - 🖼️ Select files from your computer
+   - 📋 Maintain the folder structure when uploading:
      - Event photos go in: `FGM Pics/` or appropriate event folder
      - Officer photos go in: `officers/`
      - General photos go in: `photos/`
 
 4. **Important notes**:
-   - Image files should be in JPG or PNG format
-   - Keep filenames simple without special characters
-   - Optimize images before uploading (aim for less than 1MB per image)
-   - Images will appear on the website shortly after uploading
+   - 📝 Image files should be in JPG or PNG format
+   - 📊 Keep file sizes under 1MB (compress large images before uploading)
+   - 🏷️ Use simple file names without spaces or special characters
+   - ⚡ Images will appear on the website shortly after uploading
 
-### Managing the Calendar
+### 📅 Managing the Calendar
 
 The website displays events from a Google Calendar. To update events:
 
 1. **Access the Google Calendar**:
-   - Go to [Google Calendar](https://calendar.google.com)
-   - Sign in with the SJSU ASCE account credentials
+   - 🌐 Go to [Google Calendar](https://calendar.google.com)
+   - 🔐 Sign in with the SJSU ASCE account credentials
 
 2. **Add or edit events**:
-   - Click on the date for a new event, or click an existing event to edit
-   - Fill in the event details:
+   - ➕ Click on the date for a new event, or click an existing event to edit
+   - 📝 Fill in the event details:
      - Title: Clear, concise name of the event
      - Date and time: When the event will occur
      - Location: Physical location or Zoom link
      - Description: Add details about the event
 
 3. **Categorize your event** (important for website display):
-   - In the event description, add a line: `Category: [CATEGORY_NAME]`
-   - Example: `Category: Workshops & Training`
-   - Available categories:
+   - 🏷️ In the event description, add a line: `Category: [CATEGORY_NAME]`
+   - 📋 Example: `Category: Workshops & Training`
+   - 📊 Available categories:
      - Workshops & Training
      - Competitions
      - Networking Events
      - General
 
 4. **Add an image** (optional):
-   - In the event description, add a line: `ImagePath: path/to/image.jpg`
-   - Example: `ImagePath: events/workshop_spring_2023.jpg`
-   - Make sure the image is uploaded to Cloudflare R2 first
+   - 🖼️ In the event description, add a line: `ImagePath: path/to/image.jpg`
+   - 📋 Example: `ImagePath: events/workshop_spring_2023.jpg`
+   - ⚠️ Make sure to upload this image to Cloudflare R2 first
 
-5. **Changes will be reflected on the website automatically** (might take a few minutes)
+5. **Changes will be reflected on the website automatically** (might take a few minutes) ⏱️
 
-### Contact Form Information
+### 📨 Contact Form Information
 
 When visitors submit the contact form, their information is stored in a database. To access this information:
 
 1. **Check the contact submissions**:
-   - Contact form submissions are forwarded to the SJSU ASCE email account
-   - Sign in to your ASCE Gmail account to view submissions
-   - Submissions will have the subject line "New Contact Form Submission"
+   - 📧 Contact form submissions are forwarded to the SJSU ASCE email account
+   - 🔐 Sign in to your ASCE Gmail account to view submissions
+   - 📑 Submissions will have the subject line "New Contact Form Submission"
 
 2. **Export submissions** (if needed):
-   - For a record of all submissions, contact the website administrator
-   - Data can be exported to Excel/CSV format upon request
+   - 📊 For a record of all submissions, contact the website administrator
+   - 📥 Data can be exported to Excel/CSV format upon request
 
 ---
 
-## For Developers
+## 👩‍💻 For Developers
 
 This section is for technical users who need to maintain or extend the website codebase.
 
-### Getting Started
+### 🚀 Getting Started
 
 ```bash
 # Clone the repository
@@ -126,7 +138,7 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) to see the result.
 
-### Project Structure
+### 🏗️ Project Structure
 
 ```
 /app                        # Next.js app directory (main application code)
@@ -167,14 +179,14 @@ Open [http://localhost:3000](http://localhost:3000) to see the result.
 /wrangler.toml              # Wrangler configuration for Cloudflare
 ```
 
-### Technologies Used
+### ⚙️ Technologies Used
 
 - **Frontend**: Next.js, React, TypeScript, Tailwind CSS
 - **Image Storage**: Cloudflare R2
 - **Calendar Integration**: Google Calendar API
 - **Deployment**: Vercel
 
-### Deployment
+### 🚢 Deployment
 
 The site is automatically deployed through Vercel when changes are pushed to the main branch. Manual deployments can be triggered from the Vercel dashboard.
 
@@ -184,10 +196,10 @@ For detailed development documentation, please refer to the files in the `/docs`
 
 ---
 
-## License
+## 📄 License
 
 [MIT](LICENSE)
 
-## Contact
+## 📞 Contact
 
 For questions or support regarding the website, please contact the SJSU ASCE webmaster at [web@sjsuasce.com](mailto:web@sjsuasce.com). 
