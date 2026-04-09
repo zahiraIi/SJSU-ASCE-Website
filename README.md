@@ -131,47 +131,6 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) to see the result.
 
-### 🏗️ Project Structure
-
-```
-/app                        # Next.js app directory (main application code)
-  /api                      # API routes
-    /contact                # Contact form API endpoint
-    /events                 # Events API routes
-  /components               # Reusable components
-    /Layout                 # Layout components (header, footer, etc.)
-    /ui                     # UI components (buttons, cards, etc.)
-    /R2Image.tsx            # Cloudflare R2 image component
-    /FallbackImage.tsx      # Fallback image component
-    /PhotoGallery.tsx       # Photo gallery component
-    /UpcomingEvents.tsx     # Upcoming events component
-  /about                    # About page
-  /contact                  # Contact page
-  /events                   # Events page
-  /gallery                  # Gallery page
-  /membership               # Membership page
-  /officers                 # Officers page
-  /sponsors                 # Sponsors page
-  /hooks                    # Custom React hooks
-  /utils                    # Utility functions
-    /googleCalendar.ts      # Google Calendar integration
-    /imageUtils.ts          # Image utility functions
-    /photoData.ts           # Photo data functions
-  /page.tsx                 # Homepage
-  /layout.tsx               # Root layout
-  /globals.css              # Global CSS styles
-/docs                       # Documentation
-  /GOOGLE_CALENDAR_SETUP.md # Google Calendar setup guide
-  /CLOUDFLARE_R2_STORAGE.md # Cloudflare R2 storage guide
-/public                     # Static assets
-/scripts                    # Utility scripts for maintenance tasks
-/types                      # TypeScript type definitions
-/next.config.js             # Next.js configuration
-/tailwind.config.js         # Tailwind CSS configuration
-/r2-worker.js               # Cloudflare R2 worker script
-/wrangler.toml              # Wrangler configuration for Cloudflare
-```
-
 ### ⚙️ Technologies Used
 
 - **Frontend**: Next.js, React, TypeScript, Tailwind CSS
